@@ -1,0 +1,1028 @@
+[
+	{
+		"id": "0",
+		"name": "PMA-3",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "1",
+		"name": "Experiment Logistics Module (ELM)",
+		"owners": [
+			"Japan"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "2",
+		"name": "Z1 ITS",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "3",
+		"name": "ELC-2",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "4",
+		"name": "AMS-02",
+		"owners": [
+			"North America",
+			"Europe",
+			"Asia"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "5",
+		"name": "Mobile Servicing System (MSS)",
+		"owners": [
+			"Canada",
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "Canadarm2 (SSRMS)",
+				"description": ""
+			},
+			{
+				"name": "Mobile Base System (MBS)",
+				"description": ""
+			},
+			{
+				"name": "Dextre (SPDM)",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "6",
+		"name": "ELC-3",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "7",
+		"name": "Poisk (MRM-2)",
+		"owners": [
+			"Russia"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "8",
+		"name": "PMA-2",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "9",
+		"name": "Columbus (European Laboratory)",
+		"owners": [
+			"EU"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+    {
+		"id": "10",
+		"name": "Harmony (Node 2)",
+		"owners": [
+			"United States",
+			"EU"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "11",
+		"name": "JEM Pressurized Module (JEM-PM)",
+		"owners": [
+			"Japan"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "12",
+		"name": "JEM Exposed Facility",
+		"owners": [
+			"Japan"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "13",
+		"name": "Destiny (US Laboratory)",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "14",
+		"name": "ESP-1",
+		"owners": [
+			"United States"
+		],
+		"parts": [
+			{
+				"name": "",
+				"length": {
+					"m": 0,
+					"ft": 0
+				},
+				"diameter": {
+					"m": 0,
+					"ft": 0
+				},
+				"mass": {
+					"kg": 0,
+					"lb:": 0
+				},
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "15",
+		"name": "ESP-2",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "16",
+		"name": "Leonardo (PMM)",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "17",
+		"name": "Quest (Joint Airlock)",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "18",
+		"name": "Unity (Node 1)",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "19",
+		"name": "Tranquility (Node 3)",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+    {
+		"id": "20",
+		"name": "BEAM",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "21",
+		"name": "S6 ITS",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "22",
+		"name": "S5 ITS",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "23",
+		"name": "S3/S4 ITS",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "24",
+		"name": "S1 ITS",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "25",
+		"name": "S0 ITS",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "26",
+		"name": "P1 ITS",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "27",
+		"name": "P3/P4 ITS",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "28",
+		"name": "P5 ITS",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "29",
+		"name": "P6 ITS",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+    {
+		"id": "30",
+		"name": "PMA-1",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "31",
+		"name": "Zarya (FGB)",
+		"owners": [
+			"Russia"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "32",
+		"name": "Zvezda (Service Module)",
+		"owners": [
+			"Russia"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "33",
+		"name": "Cupola",
+		"owners": [
+			"EU"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "34",
+		"name": "ESP-3",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "35",
+		"name": "ELC-4",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "36",
+		"name": "ELC-1",
+		"owners": [
+			"United States"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "37",
+		"name": "Rassvet (MRM-1)",
+		"owners": [
+			"Russia"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	},
+	{
+		"id": "38",
+		"name": "Pirs (Docking Compartment)",
+		"owners": [
+			"Russia"
+		],
+		"length": {
+			"m": 0,
+			"ft": 0
+		},
+		"diameter": {
+			"m": 0,
+			"ft": 0
+		},
+		"mass": {
+			"kg": 0,
+			"lb:": 0
+		},
+		"parts": [
+			{
+				"name": "",
+				"description": ""
+			}
+		],
+		"description": ""
+	}
+]
