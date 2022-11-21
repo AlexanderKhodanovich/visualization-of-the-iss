@@ -3,21 +3,90 @@
     <head>
         <!-- Meta Tag -->
         <meta charset="utf-8">
-        
+
         <!-- CSS Stylesheet -->
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        
+
         <!-- D3.js Source -->
-        <script type= "text/javascript" src="http://d3js.org/d3.v5.min.js"></script>
-        
+        <script type= "text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+
         <!-- Scripts -->
         <script type="text/javascript" src="utils.js"></script>
         <script type="text/javascript" src="draw_modules.js"></script>
         <script type="text/javascript" src="animate_modules.js"></script>
     </head>
-    
-    <body>
-        <script type="text/javascript" src="main.js"></script>
-    </body>
 
+    <body>
+        <canvas id="stars"></canvas>
+        <script type="text/javascript" src="main.js"></script>
+        <div id="footer">
+            <p id="footerText"> 
+                <br>
+                <b>Creators</b><br>
+                <br>
+                Alexander Khodanovich - akhodano@ucsc.edu<br>
+                Kevin Schultz - ksschult@ucsc.edu<br>
+                Hector Torres - htorres5@ucsc.edu<br>
+                <br>
+                In Collaboration with:<br>
+                <br>
+                Suresh K. Lodha (Instructor)<br>
+                Omkar Ghanekar (TA)<br>
+                Jacob Low (TA)<br>
+                <br>
+                <a href="https://alexanderkhodanovich.github.io/visualization-of-the-iss/src/index.html"><b>Github Link</b></a><br>
+            </p>
+            <div class="row">
+                <br>
+                <div class="column">
+                    <p id="footerText"> 
+                        <b>Files</b><br>
+                        <br>
+                        index.html<br>
+                        stylesheet.css<br>
+                        <br>
+                        main.js<br>
+                        utils.js<br>
+                        animate_modules.js<br>
+                        draw_modules.js<br>
+                        <br>
+                        modules.json<br>
+                        position.json<br>
+                        module_##.png<br>
+                        <br>
+                    </p>
+                </div>
+                <div class="column">
+                    <p id="footerText"> 
+                        <b>Data Sources</b><br>
+                        <br>
+                        <a href="https://www.nasa.gov/mission_pages/station/structure/elements/space-station-assembly">Nasa Space Station Assembly</a><br>
+                        <a href="https://www.dlr.de/content/en/articles/missions-projects/iss/iss-data-modules.html">Data and Modules</a><br>
+                        <a href="https://www.bbc.com/future/bespoke/space-station/">BBC Living Space Visualization</a><br>
+                        <br>
+                    </p>
+                </div>
+                <div class="column">
+                    <p id="footerText"> 
+                        <b>Visualization Sources</b><br>
+                        <br>
+                        --- <br>
+                        <br>
+                    </p>
+                </div>
+                <div class="column">
+                    <p id="footerText"> 
+                        <b>Code Sources</b><br>
+                        <br>
+                        <a href="http://open-notify.org/Open-Notify-API/ISS-Location-Now/">Current Position of the ISS</a><br>
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="mainloop.js"></script>
+    <script type="module" src="shapes.js"></script>
+    <script type="module" src="stars.js"></script>
+    <script type="module" src="animate_stars.js"></script>
 </html>
