@@ -1,6 +1,6 @@
 class Animation {
     constructor(pos, img) {
-        this.root_modules = [10];
+        this.root_modules = [18, 24, 25, 30];
         this.positions = pos;
         this.images = img;
         this.move_scalar = 30;
