@@ -132,7 +132,7 @@
         "moves": [
             {
                 "direction": "+x",
-                "d": 1
+                "d": 0.5
             }
         ],
         "parent": 10,
@@ -198,7 +198,7 @@
         "moves": [
             {
                 "direction": "+y",
-                "d": 1
+                "d": 0.5
             }
         ],
         "parent": 11,
@@ -231,7 +231,7 @@
         "moves": [
             {
                 "direction": "+y",
-                "d": 1
+                "d": 0.5
             }
         ],
         "parent": 13,
@@ -263,7 +263,7 @@
         "moves": [
             {
                 "direction": "+x",
-                "d": 1
+                "d": 0.5
             }
         ],
         "parent": 19,
@@ -295,9 +295,13 @@
         "id": 18,
         "moves": [
             {
+                "direction": "-z",
+                "d": 0.5
+            },
+            {
                 "direction": "+x",
-                "d": 1
-            }
+                "d": 2
+            } 
         ],
         "parent": -1,
         "children": [
@@ -330,7 +334,7 @@
         "moves": [
             {
                 "direction": "-x",
-                "d": 1
+                "d": 0.5
             }
         ],
         "parent": 19,
@@ -548,7 +552,7 @@
         "moves": [
             {
                 "direction": "-z",
-                "d": 1
+                "d": 0.5
             }
         ],
         "parent": 19,

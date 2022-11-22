@@ -10,14 +10,13 @@ function main() {
     draw_promise.then(data => {
         var animation = new Animation(data, images);
         
-        //animation.init_leaves(10);
+        animation.animate([18], 50);
+        animation.animate_all(25);
+        //animation.animate_all(50);
         
-        // animate
-        animation.animate();
-        animation.animate();
-        
-        animation.animate(true);
-        animation.animate(true);
+        animation.animate_reverse();
+        animation.animate_reverse();
+        //animation.animate_reverse();
     });
 }
 
