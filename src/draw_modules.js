@@ -7,8 +7,8 @@ const SCALE_FACTOR = 0.25;
 const IMAGE_WIDTH = 2200 * SCALE_FACTOR;
 const IMAGE_HEIGHT = 2200 * SCALE_FACTOR;
 
-const SVG_WIDTH = window.innerWidth;
-const SVG_HEIGHT = window.innerHeight;
+const SVG_WIDTH = 6000 * SCALE_FACTOR;
+const SVG_HEIGHT = 3496 * SCALE_FACTOR;
 
 
 // Data paths
@@ -87,7 +87,7 @@ function draw_modules(g) {
 }
 
 //------------------------------------------------------ Code -------------------------------------------------------//
-document.addEventListener("click", function (event) {
+addEventListener("click", function (event) {
     console.log("x : " + event.clientX * (1 / SCALE_FACTOR) + ", y : " + event.clientY * (1 / SCALE_FACTOR));
 });
 
