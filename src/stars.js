@@ -97,7 +97,6 @@ StarSystem.prototype.restart = function() {
 
 StarSystem.prototype.resize = function() {
     this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
     this.restart();
 };
 
