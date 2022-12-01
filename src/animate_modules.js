@@ -1,27 +1,35 @@
 class Animation {
     constructor(pos, img) {
-        this.root_modules = [10];
+        this.root_modules = [18, 24, 25, 30];
         this.positions = pos;
         this.images = img;
-        this.move_scalar = 30;
+        this.duration = 500;
         
         // initialized on each call of animate()
-        this.queue_promises = [];
-        this.queue_resolvers = [];
+        this.promise = null
+        this.resolve = null;
+        this.mod_ids = null;
+        this.scalar = null;
+        this.reverse = false;
         this.ends = [];
         this.n_active_ends = 0;
-        this.done = null;
         this.moves = null;
+        
+        // pushed to on each call of animate()
+        this.queue = [];
+        this.history_queue = [];
+        this.promises = [];
     }
     
-    init_ends(mod_id) {
+    get_leaves(mod_id, ends = []) {
         if (this.positions[mod_id].children.length == 0)
-            this.ends.push(mod_id);
+            ends.push(mod_id);
         else {
             this.positions[mod_id].children.forEach(ch => {
-                this.init_ends(ch);
+                ends = this.get_leaves(ch, ends);
             });
         }
+        return ends;
     }
 
     move(mv, step_done) {
@@ -32,7 +40,7 @@ class Animation {
         this.images[mv.id].select("image")
             .datum([this, step_done])
             .transition()
-            .duration(500)
+            .duration(this.duration)
             .ease(d3.easeExp)
             .attr("x", x)
             .attr("y", y)
@@ -46,8 +54,8 @@ class Animation {
             
                 // if no more active ends left
                 if (args[0].n_active_ends == 0) {
-                    args[0].queue_promises.shift();
-                    args[0].queue_resolvers.shift()(args[0]) // resolve
+                    args[0].promises.shift();
+                    args[0].resolve(args[0]) // resolve
                 }
             });
     }
@@ -69,7 +77,7 @@ class Animation {
         });
     }
     
-    construct_moves(reverse = false) {
+    construct_moves() {
         const positions = this.positions;
         
         function get_all_children(id, res) {
@@ -93,34 +101,42 @@ class Animation {
             else
                 var mult = -1;
             
-            var moves_one_step = [];
-            ids.forEach((id, i) => {
-                positions[id].moves.forEach((mv, j) => {
-                    if (mv.direction == "-x") {
-                        var v = [-mv.d*scalar*mult, 0, 0];
-                    } else if (mv.direction == "+x") {
-                        var v = [mv.d*scalar*mult, 0, 0];
-                    } else if (mv.direction == "-y") {
-                        var v = [0, -mv.d*scalar*mult, 0];
-                    } else if (mv.direction == "+y") {
-                        var v = [0, mv.d*scalar*mult, 0];
-                    } else if (mv.direction == "-z") {
-                        var v = [0, 0, -mv.d*scalar*mult];
-                    } else if (mv.direction == "+z") {
-                        var v = [0, 0, mv.d*scalar*mult];
+            for (var i = 0, done = false; !done; ++i) {
+                done = true;
+                var moves_one_step = [];
+                ids.forEach(id => {
+                    // if the current move is not the last, there is something more to do
+                    if (i < positions[id].moves.length - 1)
+                        done = false;
+                    
+                    var mv = positions[id].moves[i];
+                    if (mv != null) {
+                        if (mv.direction == "-x") {
+                            var v = [-mv.d*scalar*mult, 0, 0];
+                        } else if (mv.direction == "+x") {
+                            var v = [mv.d*scalar*mult, 0, 0];
+                        } else if (mv.direction == "-y") {
+                            var v = [0, -mv.d*scalar*mult, 0];
+                        } else if (mv.direction == "+y") {
+                            var v = [0, mv.d*scalar*mult, 0];
+                        } else if (mv.direction == "-z") {
+                            var v = [0, 0, -mv.d*scalar*mult];
+                        } else if (mv.direction == "+z") {
+                            var v = [0, 0, mv.d*scalar*mult];
+                        }
+                        var mods = get_all_children(id, new Set());
+                        if (reverse == false)
+                            moves_one_step.push({id:id, v:v, root:true});
+                        mods.forEach(m => {
+                            // append moves of the children
+                            moves_one_step.push({id:m, v:v, root:false});  
+                        })
+                        if (reverse == true)
+                            moves_one_step.push({id:id, v:v, root:true});
                     }
-                    var mods = get_all_children(id, new Set());
-                    if (reverse == false)
-                        moves_one_step.push({id:id, v:v, root:true});
-                    mods.forEach(m => {
-                        // append moves of the children
-                        moves_one_step.push({id:m, v:v, root:false});  
-                    })
-                    if (reverse == true)
-                        moves_one_step.push({id:id, v:v, root:true});
                 });
-            });
-            moves.push(moves_one_step);
+                moves.push(moves_one_step);
+            }
             
             var c = [];
             ids.forEach(id => {
@@ -132,66 +148,113 @@ class Animation {
             
             return moves;
         }
-        
-        var moves = construct(this.positions, this.root_modules, this.move_scalar, reverse);
-        if (reverse == true)
-            return moves.reverse();
+
+        if (this.reverse == true)
+            return construct(this.positions, this.ends, this.scalar, this.reverse).reverse();
         else
-            return moves;
+            return construct(this.positions, this.mod_ids, this.scalar, this.reverse);
     }
     
-    animate_ready(reverse) {
-        if (reverse == true) {
+    animate_ready() {
+        var data = this.queue.shift();
+        this.reverse = data.reverse;
+        
+        if (this.reverse == true) {
+            var h_data = this.history_queue.shift();
+            
+            // init parameters
+            this.promise = data.promise;
+            this.resolve = data.resolver;
+            this.mod_ids = h_data.ends;
+            this.scalar = h_data.scalar;
+            
             // init ends as roots
-            this.ends = this.root_modules;
-            this.n_active_ends = this.root_modules.length;
-        } else {
-            // init ends as leaves (with no children)
-            this.root_modules.forEach(mid => { this.init_ends(mid); });
+            this.ends = h_data.roots;
             this.n_active_ends = this.ends.length;
+        } else {
+            // init parameters
+            this.promise = data.promise;
+            this.resolve = data.resolver;
+            this.mod_ids = data.mod_ids;
+            this.scalar = data.scalar;
+            
+            // init ends as leaves (with no children)
+            this.mod_ids.forEach(mid => { this.ends = this.ends.concat(this.get_leaves(mid)); });
+            this.n_active_ends = this.ends.length;
+            
+            // push to history_queue
+            this.history_queue.push({
+                id: data.id,
+                roots: data.mod_ids,
+                ends: this.ends,
+                scalar: data.scalar
+            });
         }
         
         // construct moves
-        this.moves = this.construct_moves(reverse);
+        this.moves = this.construct_moves();
         
         // apply moves
         this.apply_moves();
     }
     
-    animate(reverse = false) {
+    animate_helper(mod_ids, scalar, reverse) {
+        this.mod_ids = mod_ids
+        
         // create the animation promise and a function to resolve it
         var done;
         var animate_promise = new Promise(resolve => {
             done = resolve;
         });
         
+        // get all other promises
+        var other_promises = Promise.all(this.promises);
+        
+        // add animation to the queue
+        this.promises.push(animate_promise);
+        this.queue.push({
+            id: this.history_queue.length,
+            resolver: done,
+            mod_ids: mod_ids,
+            scalar: scalar,
+            reverse: reverse
+        });
+        
         // if no animations in queue
-        if (this.queue_promises.length == 0) {
-            // add animation to the queue
-            this.queue_promises.push(animate_promise);
-            this.queue_resolvers.push(done);
-            
-            console.log("Started animation"); 
+        if (this.promises.length == 1) {
+            console.log("Started animation");
+
             // animate
-            this.animate_ready(reverse);
+            this.animate_ready();
         }
         // otherwise
         else {
-            var other_promises = Promise.all(this.queue_promises);
-            
-            // add animation to the queue
-            this.queue_promises.push(animate_promise);
-            this.queue_resolvers.push(done);
-            
             // wait for previous animations
             other_promises.then(function(context) {
+                // animate
                 console.log("Started animation"); 
-                context[0].animate_ready(reverse); 
+                context[0].animate_ready(); 
             });
         }
+        
+        // wait for animation to finish
         animate_promise.then(function(context) {
             context.ends = [];
             console.log("finished animation"); 
         });
+    }
+    
+    animate_reverse() {
+        this.animate_helper(null, null, true);
+    }
+    
+    animate(mod_ids, scalar) {
+        this.animate_helper(mod_ids, scalar, false);
+    }
+    
+    
+    
+    animate_all(scalar) {
+        this.animate_helper(this.root_modules, scalar, false);
     }
 }

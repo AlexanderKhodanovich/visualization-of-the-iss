@@ -7,8 +7,8 @@ const SCALE_FACTOR = 0.25;
 const IMAGE_WIDTH = 2200 * SCALE_FACTOR;
 const IMAGE_HEIGHT = 2200 * SCALE_FACTOR;
 
-const SVG_WIDTH = 1600;
-const SVG_HEIGHT = 900;
+const SVG_WIDTH = window.innerWidth;
+const SVG_HEIGHT = window.innerHeight;
 
 
 // Data paths
@@ -23,6 +23,10 @@ var margin = {left: 50, right: 50, top: 0, bottom: 0 },
     width = SVG_WIDTH - margin.left -margin.right,
     height = SVG_HEIGHT - margin.top - margin.bottom;
 var center = {x: width/2, y: height/2};
+var offset_to_center = {
+    x: (center.x - 3300 * SCALE_FACTOR),
+    y: (center.y - 1700 * SCALE_FACTOR)
+};
 
 //---------------------------------------------------- Functions ----------------------------------------------------//
 function offset(target, x_offset, y_offset) {
@@ -71,7 +75,7 @@ function draw_modules(g) {
         for (let i = 38; i >= 0; i--) {
             if (data[i].x) {
                 var m = create_image(g, "module_" + i + ".png", IMAGE_WIDTH, IMAGE_HEIGHT);
-                move_in_2d(m, data[i].x * SCALE_FACTOR, data[i].y * SCALE_FACTOR);
+                move_in_2d(m, data[i].x * SCALE_FACTOR + offset_to_center.x, data[i].y * SCALE_FACTOR + offset_to_center.y);
                 // preserves the order (so that id is the same as index)
                 images[i] = m;   
             }
