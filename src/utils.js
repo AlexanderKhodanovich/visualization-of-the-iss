@@ -1,3 +1,12 @@
+function get_center(obj) {
+    var w = +obj.attr("width"),
+        h = +obj.attr("height"),
+        cx = +obj.attr("x") + w/2,
+        cy = +obj.attr("y") + h/2;
+    
+    return {x:cx, y:cy};
+}
+
 function move_in_2d(target, x, y) {
     target.select("image")
         .attr("x", x - IMAGE_WIDTH / 2)
@@ -22,11 +31,7 @@ function move_in_3d(x, y, d_arr) {
 
 function draw_axes(parent, axes, module, line_len=600) {
     // find center of the line
-    var w = +module.select("image").attr("width"),
-        h = +module.select("image").attr("height"),
-        cx = +module.select("image").attr("x") + w/2,
-        cy = +module.select("image").attr("y") + h/2,
-        c = {x: cx, y:cy };
+    var c = get_center(module);
     
     // init stuff
     var g = parent.append("g").attr("class", "axes"),

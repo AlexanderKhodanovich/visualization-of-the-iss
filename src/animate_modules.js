@@ -1,4 +1,4 @@
-class Animation {
+class Animation {   
     constructor(pos, img) {
         this.root_modules = [18, 24, 25, 30];
         this.positions = pos;
@@ -8,11 +8,10 @@ class Animation {
         // initialized on each call of animate()
         this.promise = null
         this.resolve = null;
-        this.mod_ids = null;
+        this.roots = null;
         this.scalar = null;
         this.reverse = false;
         this.ends = [];
-        this.n_active_ends = 0;
         this.moves = null;
         
         // pushed to on each call of animate()
@@ -31,32 +30,26 @@ class Animation {
         }
         return ends;
     }
-
-    move(mv, step_done) {
-        var [x, y] = move_in_3d((+this.images[mv.id].select("image").attr("x")),
-                                  (+this.images[mv.id].select("image").attr("y")),
-                                  mv.v);
+    
+    move(mv, step_done, is_last_in_step, is_last) {
+        var x_old = +this.images[mv.id].select("image").attr("x"),
+            y_old = +this.images[mv.id].select("image").attr("y"),
+            [x, y] = move_in_3d(x_old, y_old, mv.v);
 
         this.images[mv.id].select("image")
-            .datum([this, step_done])
+            .datum([this, step_done, is_last])
             .transition()
             .duration(this.duration)
             .ease(d3.easeExp)
             .attr("x", x)
             .attr("y", y)
             .on("end", function(args) {
-                // if the current end module initiated the move
-                if (args[0].ends.includes(mv.id) && mv.root == true)
-                    args[0].n_active_ends--;  // then this was its last move
-                
                 // resolve the step promise
                 args[1](args[0]);
             
-                // if no more active ends left
-                if (args[0].n_active_ends == 0) {
-                    args[0].promises.shift();
-                    args[0].resolve(args[0]) // resolve
-                }
+                // resolve animation on last move
+                if (args[2])
+                    args[0].resolve(args[0]) 
             });
     }
     
@@ -66,8 +59,18 @@ class Animation {
             step_done = resolve;
         });
         
-        this.moves[i].forEach(mv => {
-            this.move(mv, step_done);
+        this.moves[i].forEach((mv, j) => {
+            if (j == this.moves[i].length - 1) {
+                var is_last_in_step = true;
+                if (i == this.moves.length - 1)
+                    var is_last = true;
+                else
+                    var is_last = false;
+            } else {
+                var is_last_in_step = false;
+            }
+            
+            this.move(mv, step_done, is_last_in_step, is_last);
         });
         
         promise_step.then(function(context) {
@@ -152,7 +155,7 @@ class Animation {
         if (this.reverse == true)
             return construct(this.positions, this.ends, this.scalar, this.reverse).reverse();
         else
-            return construct(this.positions, this.mod_ids, this.scalar, this.reverse);
+            return construct(this.positions, this.roots, this.scalar, this.reverse);
     }
     
     animate_ready() {
@@ -165,22 +168,20 @@ class Animation {
             // init parameters
             this.promise = data.promise;
             this.resolve = data.resolver;
-            this.mod_ids = h_data.ends;
+            this.roots = h_data.ends;
             this.scalar = h_data.scalar;
             
             // init ends as roots
             this.ends = h_data.roots;
-            this.n_active_ends = this.ends.length;
         } else {
             // init parameters
             this.promise = data.promise;
             this.resolve = data.resolver;
-            this.mod_ids = data.mod_ids;
+            this.roots = data.mod_ids;
             this.scalar = data.scalar;
             
             // init ends as leaves (with no children)
-            this.mod_ids.forEach(mid => { this.ends = this.ends.concat(this.get_leaves(mid)); });
-            this.n_active_ends = this.ends.length;
+            this.roots.forEach(mid => { this.ends = this.ends.concat(this.get_leaves(mid)); });
             
             // push to history_queue
             this.history_queue.push({
@@ -199,7 +200,7 @@ class Animation {
     }
     
     animate_helper(mod_ids, scalar, reverse) {
-        this.mod_ids = mod_ids
+        this.roots = mod_ids
         
         // create the animation promise and a function to resolve it
         var done;
@@ -240,7 +241,7 @@ class Animation {
         // wait for animation to finish
         animate_promise.then(function(context) {
             context.ends = [];
-            console.log("finished animation"); 
+            console.log("finished animation");
         });
     }
     
@@ -250,9 +251,7 @@ class Animation {
     
     animate(mod_ids, scalar) {
         this.animate_helper(mod_ids, scalar, false);
-    }
-    
-    
+    } 
     
     animate_all(scalar) {
         this.animate_helper(this.root_modules, scalar, false);
