@@ -50,21 +50,33 @@ canvas {
     z-index: -1;
 }
 
-.tooltip polygon {
+.sidebar polygon {
     opacity: 0.95;
     fill: #1B2631;
 }
 
-.tooltip text.title {
+.sidebar text.title {
     fill: black;
     font-size: 3em;
     text-align: center;
 }
 
-g.module_highlighted image {
+.tooltip rect {
+    fill: #1B2631;
+    stroke: white;
+    pointer-events:none;
+}
+
+.tooltip text {
+    fill: white;
+    font-size: 1.3em;
+    pointer-events:none;
+}
+
+.module_highlighted image {
     filter: invert(0) sepia(1) saturate(3) hue-rotate(16deg);
 }
 
-g.module_selected image {
+.module_selected image {
     filter: invert(0) sepia(1) saturate(10) hue-rotate(16deg);
 }

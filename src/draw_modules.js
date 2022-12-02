@@ -18,7 +18,6 @@ path_images = "../data/images/";
 // Data vars
 var images = [];
 var positions = [];
-var prev_highlighted = -1;
 
 // width/height/center of the main g
 var margin = {left: 50, right: 50, top: 0, bottom: 0 }, 
@@ -31,30 +30,30 @@ var offset_to_center = {
 };
 
 //---------------------------------------------------- Functions ----------------------------------------------------//
-function offset(target, x_offset, y_offset) {
-    var dx = (+target.select("image").attr("x")) + x_offset;
-    var dy = (+target.select("image").attr("y")) + y_offset;
-    target.select("image")
-        .attr("x", dx)
-        .attr("y", dy);
-}
-
-function on_mousemove_highlight(e) {
-    p_mouse = {x: (e.clientX - margin.left), y: (e.clientY - margin.top)};
+function find_closest_module(point) {
     d_arr = [];
     
     // calculate distances from mouse to image centers
     get_module_centers().forEach(p => {
-        d_arr.push(distance(p_mouse, p));
+        d_arr.push(distance(point, p));
     });
     
-    // find the closest
-    var id = d_arr.indexOf(Math.min(...d_arr));
-    if (prev_highlighted != -1 && images[prev_highlighted].attr("class") == "module_highlighted")
-        images[prev_highlighted].attr("class", "module_normal");
+    // find and return the closest
+    return d_arr.indexOf(Math.min(...d_arr));
+}
+
+function on_mousemove_highlight(e) {
+    var id = find_closest_module({x: (e.clientX - margin.left), y: (e.clientY - margin.top)});
     
-    images[id].attr("class", "module_highlighted");
-    prev_highlighted = id;
+    d3.select("g.module_highlighted").attr("class", "module_normal");
+    
+    if (images[id].attr("class") == "module_normal")
+        images[id].attr("class", "module_highlighted")
+}
+
+function on_mouseout_highlight(e) {
+    var id = find_closest_module({x: (e.clientX - margin.left), y: (e.clientY - margin.top)});
+    d3.select("g.module_highlighted").attr("class", "module_normal");
 }
 
 function create_image(parent, image_name, w, h) {
@@ -103,9 +102,8 @@ function draw_modules(g) {
         }
         
         // set up highlighting listener
-        document.querySelector("g").addEventListener("mousemove", function(event) {
-            on_mousemove_highlight(event);
-        });
+        document.querySelector("g").addEventListener("mousemove", function(event) { on_mousemove_highlight(event); });
+        document.querySelector("g").addEventListener("mouseout", function(event) { on_mouseout_highlight(event); });
     });
     
     // return the promise

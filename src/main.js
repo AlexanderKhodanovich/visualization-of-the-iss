@@ -9,6 +9,7 @@ function main() {
     // wait until modules are rendered
     draw_promise.then(data => {
         // create tooltip
+        init_sidebar();
         init_tooltip();
         
         // animate
