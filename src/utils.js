@@ -1,3 +1,10 @@
+function distance(p1, p2) {
+    var l1 = Math.abs(p1.x - p2.x),
+        l2 = Math.abs(p1.y - p2.y);
+    
+    return Math.sqrt(l1*l1 + l2*l2);
+}
+
 function get_center(obj) {
     var w = +obj.attr("width"),
         h = +obj.attr("height"),
@@ -82,4 +89,14 @@ function draw_axes(parent, axes, module, line_len=600) {
             .attr("y", (points[1][1] - 6))
             .text("Z");
     }
+}
+
+function draw_points(p_arr) {
+    p_arr.forEach(p => {
+        d3.select("g.main").append("circle")
+            .attr("cx", p.x)
+            .attr("cy", p.y)
+            .attr("r", 5)
+            .style("fill", "red");
+    });
 }

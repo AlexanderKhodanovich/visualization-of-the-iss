@@ -17,6 +17,7 @@ path_images = "../data/images/";
 
 // Data vars
 var images = [];
+var positions = [];
 
 // width/height/center of the main g
 var margin = {left: 50, right: 50, top: 0, bottom: 0 }, 
@@ -29,18 +30,36 @@ var offset_to_center = {
 };
 
 //---------------------------------------------------- Functions ----------------------------------------------------//
-function offset(target, x_offset, y_offset) {
-    var dx = (+target.select("image").attr("x")) + x_offset;
-    var dy = (+target.select("image").attr("y")) + y_offset;
-    target.select("image")
-        .attr("x", dx)
-        .attr("y", dy);
+function find_closest_module(point) {
+    d_arr = [];
+    
+    // calculate distances from mouse to image centers
+    get_module_centers().forEach(p => {
+        d_arr.push(distance(point, p));
+    });
+    
+    // find and return the closest
+    return d_arr.indexOf(Math.min(...d_arr));
+}
+
+function on_mousemove_highlight(e) {
+    var id = find_closest_module({x: (e.clientX - margin.left), y: (e.clientY - margin.top)});
+    
+    d3.select("g.module_highlighted").attr("class", "module_normal");
+    
+    if (images[id].attr("class") == "module_normal")
+        images[id].attr("class", "module_highlighted")
+}
+
+function on_mouseout_highlight(e) {
+    var id = find_closest_module({x: (e.clientX - margin.left), y: (e.clientY - margin.top)});
+    d3.select("g.module_highlighted").attr("class", "module_normal");
 }
 
 function create_image(parent, image_name, w, h) {
     new_g = parent
         .append("g")
-        .attr("class", "module")
+        .attr("class", "module_normal")
 
     new_g
         .append("svg:image")
@@ -72,6 +91,7 @@ function draw_modules(g) {
     
     // draw modules once the promise is fulfilled
     draw_promise.then(function(data) {
+        positions = data;
         for (let i = 38; i >= 0; i--) {
             if (data[i].x) {
                 var m = create_image(g, "module_" + i + ".png", IMAGE_WIDTH, IMAGE_HEIGHT);
@@ -80,15 +100,33 @@ function draw_modules(g) {
                 images[i] = m;   
             }
         }
+        
+        // set up highlighting listener
+        document.querySelector("g").addEventListener("mousemove", function(event) { on_mousemove_highlight(event); });
+        document.querySelector("g").addEventListener("mouseout", function(event) { on_mouseout_highlight(event); });
     });
     
     // return the promise
     return [draw_promise, images];
 }
 
+function get_module_centers() {
+    var centers = [];
+    
+    images.forEach((img, i) => {
+        var raw_center = get_center(img.select("image"));
+        centers.push({
+            x: raw_center.x + positions[i].x_offset,
+            y: raw_center.y + positions[i].y_offset
+        });
+    });
+    
+    return centers;
+}
+
 //------------------------------------------------------ Code -------------------------------------------------------//
 document.addEventListener("click", function (event) {
-    console.log("x : " + event.clientX * (1 / SCALE_FACTOR) + ", y : " + event.clientY * (1 / SCALE_FACTOR));
+    console.log("x : " + event.clientX + ", y : " + event.clientY);
 });
 
 //-------------------------------------------------------------------------------------------------------------------//
