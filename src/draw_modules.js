@@ -17,6 +17,8 @@ path_images = "../data/images/";
 
 // Data vars
 var images = [];
+var positions = [];
+var prev_highlighted = -1;
 
 // width/height/center of the main g
 var margin = {left: 50, right: 50, top: 0, bottom: 0 }, 
@@ -37,10 +39,28 @@ function offset(target, x_offset, y_offset) {
         .attr("y", dy);
 }
 
+function on_mousemove_highlight(e) {
+    p_mouse = {x: (e.clientX - margin.left), y: (e.clientY - margin.top)};
+    d_arr = [];
+    
+    // calculate distances from mouse to image centers
+    get_module_centers().forEach(p => {
+        d_arr.push(distance(p_mouse, p));
+    });
+    
+    // find the closest
+    var id = d_arr.indexOf(Math.min(...d_arr));
+    if (prev_highlighted != -1 && images[prev_highlighted].attr("class") == "module_highlighted")
+        images[prev_highlighted].attr("class", "module_normal");
+    
+    images[id].attr("class", "module_highlighted");
+    prev_highlighted = id;
+}
+
 function create_image(parent, image_name, w, h) {
     new_g = parent
         .append("g")
-        .attr("class", "module")
+        .attr("class", "module_normal")
 
     new_g
         .append("svg:image")
@@ -72,6 +92,7 @@ function draw_modules(g) {
     
     // draw modules once the promise is fulfilled
     draw_promise.then(function(data) {
+        positions = data;
         for (let i = 38; i >= 0; i--) {
             if (data[i].x) {
                 var m = create_image(g, "module_" + i + ".png", IMAGE_WIDTH, IMAGE_HEIGHT);
@@ -80,15 +101,34 @@ function draw_modules(g) {
                 images[i] = m;   
             }
         }
+        
+        // set up highlighting listener
+        document.querySelector("g").addEventListener("mousemove", function(event) {
+            on_mousemove_highlight(event);
+        });
     });
     
     // return the promise
     return [draw_promise, images];
 }
 
+function get_module_centers() {
+    var centers = [];
+    
+    images.forEach((img, i) => {
+        var raw_center = get_center(img.select("image"));
+        centers.push({
+            x: raw_center.x + positions[i].x_offset,
+            y: raw_center.y + positions[i].y_offset
+        });
+    });
+    
+    return centers;
+}
+
 //------------------------------------------------------ Code -------------------------------------------------------//
 document.addEventListener("click", function (event) {
-    console.log("x : " + event.clientX * (1 / SCALE_FACTOR) + ", y : " + event.clientY * (1 / SCALE_FACTOR));
+    console.log("x : " + event.clientX + ", y : " + event.clientY);
 });
 
 //-------------------------------------------------------------------------------------------------------------------//

@@ -8,15 +8,12 @@ function main() {
     
     // wait until modules are rendered
     draw_promise.then(data => {
+        // create tooltip
+        init_tooltip();
+        
+        // animate
         var animation = new Animation(data, images);
-        
-        animation.animate([18], 50);
-        animation.animate_all(25);
-        //animation.animate_all(50);
-        
-        animation.animate_reverse();
-        animation.animate_reverse();
-        //animation.animate_reverse();
+        animation.animate_all(50);
     });
 }
 
