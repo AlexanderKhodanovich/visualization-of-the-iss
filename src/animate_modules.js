@@ -1,9 +1,9 @@
 class Animation {   
     constructor(pos, img) {
-        this.root_modules = [18, 24, 25, 30];
+        this.root_modules = [25];
         this.positions = pos;
         this.images = img;
-        this.duration = 40;
+        this.duration = 500;
         
         // initialized on each call of animate()
         this.promise = null
@@ -242,7 +242,6 @@ class Animation {
         animate_promise.then(function(context) {
             context.ends = [];
             console.log("finished animation");
-            draw_points(get_module_centers());
         });
     }
     
