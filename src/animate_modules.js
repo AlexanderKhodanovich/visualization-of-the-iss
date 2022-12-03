@@ -3,7 +3,7 @@ class Animation {
         this.root_modules = [18, 24, 25, 30];
         this.positions = pos;
         this.images = img;
-        this.duration = 40;
+        this.duration = 500;
         
         // initialized on each call of animate()
         this.promise = null
