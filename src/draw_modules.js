@@ -18,6 +18,9 @@ path_images = "../data/images/";
 var images = [];
 var positions = [];
 
+// Flags
+is_highlighting_on = false;
+
 // width/height/center of the main g
 var margin = {left: 50, right: 50, top: 0, bottom: 0 }, 
     width = SVG_WIDTH - margin.left -margin.right,
@@ -42,12 +45,14 @@ function find_closest_module(point) {
 }
 
 function on_mousemove_highlight(e) {
-    var id = find_closest_module({x: (e.clientX - margin.left), y: (e.clientY - margin.top)});
-    
-    d3.select("g.module_highlighted").attr("class", "module_normal");
-    
-    if (images[id].attr("class") == "module_normal")
-        images[id].attr("class", "module_highlighted")
+    if (is_highlighting_on) {
+        var id = find_closest_module({x: (e.clientX - margin.left), y: (e.clientY - margin.top)});
+
+        d3.select("g.module_highlighted").attr("class", "module_normal");
+
+        if (images[id].attr("class") == "module_normal")
+            images[id].attr("class", "module_highlighted")
+    }
 }
 
 function on_mouseout_highlight(e) {
@@ -84,9 +89,12 @@ function create_svg() {
     return svg;
 }
 
-function draw_modules(g) {
+function draw_modules(g, dx=0) {
     // start parsing and get the promise
     var draw_promise = d3.json(path_positions);
+    
+    // shift the whole thing for future animation
+    g.attr("transform", "translate(" + (margin.left + dx) + "," + margin.top + ")");
     
     // draw modules once the promise is fulfilled
     draw_promise.then(function(data) {
@@ -107,6 +115,21 @@ function draw_modules(g) {
     
     // return the promise
     return [draw_promise, images];
+}
+
+function show_iss(g, dx, duration) {
+    var done;
+    var show_promise = new Promise(resolve => {
+        done = resolve;
+    });
+    
+    g.transition()
+        .duration(duration)
+        .ease(d3.easePoly)
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        .on("end", function() { done(); });
+    
+    return show_promise;
 }
 
 function get_module_centers() {
