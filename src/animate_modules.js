@@ -1,5 +1,5 @@
 class Animation {   
-    constructor(pos, img) {
+    constructor(pos, img, duration) {
         this.root_modules = [25];
         this.positions = pos;
         this.images = img;
