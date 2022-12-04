@@ -84,8 +84,8 @@ function create_svg() {
     // create an empty svg
     var svg = d3.select("body")
         .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom);
+        .attr("width", window.innerWidth)
+        .attr("height", window.innerHeight);
     var g_main = svg.append("g")
         .attr("class", "main")
     transform_iss(g_main, 0, 0);
@@ -128,6 +128,32 @@ function get_module_centers() {
 }
 
 //------------------------------------------------------ Code -------------------------------------------------------//
+addEventListener('resize', (event) => {
+    // resize svg
+    d3.select("svg")
+        .attr("width", window.innerWidth)
+        .attr("height", window.innerHeight);
+    
+    // calculate new iss scale
+    iss_scale = Math.min(window.innerWidth/2140, window.innerHeight/1080);
+
+    // get main g
+    var g = d3.select("g.main");
+    
+    // get old transform of the main g
+    var t = get_transform(g.attr("transform"));
+    console.log(t);
+    
+    // resize main g
+    g.attr("transform", "translate(" +
+           t.translateX + "," +
+           t.translateY + ")" + " scale(" +
+           iss_scale + ")");
+    
+    // resize sidebar
+    rescale_sidebar();
+});
+
 document.addEventListener("click", function (event) {
     console.log("x : " + event.clientX + ", y : " + event.clientY);
 });

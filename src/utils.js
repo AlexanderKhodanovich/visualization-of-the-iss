@@ -1,3 +1,24 @@
+function get_transform(transform) {
+  var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  g.setAttributeNS(null, "transform", transform);
+  
+  var matrix = g.transform.baseVal.consolidate().matrix;
+  var {a, b, c, d, e, f} = matrix;
+  var scaleX, scaleY, skewX;
+  if (scaleX = Math.sqrt(a * a + b * b)) a /= scaleX, b /= scaleX;
+  if (skewX = a * c + b * d) c -= a * skewX, d -= b * skewX;
+  if (scaleY = Math.sqrt(c * c + d * d)) c /= scaleY, d /= scaleY, skewX /= scaleY;
+  if (a * d < b * c) a = -a, b = -b, skewX = -skewX, scaleX = -scaleX;
+  return {
+    translateX: e,
+    translateY: f,
+    rotate: Math.atan2(b, a) * 180 / Math.PI,
+    skewX: Math.atan(skewX) * 180 / Math.PI,
+    scaleX: scaleX,
+    scaleY: scaleY
+  };
+}
+
 function distance(p1, p2) {
     var l1 = Math.abs(p1.x - p2.x),
         l2 = Math.abs(p1.y - p2.y);
