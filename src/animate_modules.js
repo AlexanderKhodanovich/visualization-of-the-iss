@@ -256,4 +256,8 @@ class Animation {
     animate_all(scalar) {
         this.animate_helper(this.root_modules, scalar, false);
     }
+    
+    finished() {
+        return Promise.all(this.promises);
+    }
 }
