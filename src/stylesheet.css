@@ -98,7 +98,7 @@ canvas {
     z-index: -1;
 }
 
-.sidebar polygon {
+.sidebar rect {
     opacity: 0.95;
     fill: #1B2631;
 }
@@ -107,8 +107,8 @@ canvas {
     fill: white;
     font-family: Helvetica;
     font-weight: bold;
-    font-size: 3em;
-    text-align: center;
+    font-size: 1.6em;
+    text-anchor: middle;
 }
 
 .tooltip rect {
@@ -117,11 +117,20 @@ canvas {
     pointer-events:none;
 }
 
-.tooltip text {
+text {
     fill: white;
     font-family: sans-serif;
     font-size: 1.3em;
     pointer-events:none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.menu_bg polygon {
+    opacity: 0.95;
+    fill: #1B2631;
 }
 
 .module_highlighted image {
@@ -130,4 +139,9 @@ canvas {
 
 .module_selected image {
     filter: invert(0) sepia(1) saturate(10) hue-rotate(16deg);
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
 }
