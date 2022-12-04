@@ -1,6 +1,13 @@
 var is_tooltip_on = false;
 var is_highlighting_on = false;
 
+function hide_tooltip() {
+    d3.select("g.module_highlighted")
+        .attr("class", "module_normal");
+    d3.select("g.tooltip")
+        .attr("opacity", 0);
+}
+
 function on_mousemove_tt(e) {
     if (is_highlighting_on) {
         var id = find_closest_module({x: (e.clientX - margin.left - iss_offset.x), y: (e.clientY - margin.top - iss_offset.y)});

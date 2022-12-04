@@ -110,7 +110,7 @@ function draw_modules(g, dx=0) {
     });
     
     // return the promise
-    return [draw_promise, images];
+    return draw_promise;
 }
 
 function get_module_centers() {

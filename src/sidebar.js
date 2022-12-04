@@ -3,21 +3,29 @@ module_data = null;
 
 var is_selecting_on = false;
 
+function hide_sidebar() {
+    d3.select(".module_selected")
+        .attr("class", "module_normal");
+    
+    var done;
+    var hide_promise = new Promise(resolve => {
+            done = resolve;
+        });
+    
+    d3.select("g.sidebar").transition()
+        .duration(200)
+        .attr("opacity", 0)
+        .on("end", function() { done(); });
+    
+    return hide_promise;
+}
+
 function on_click_sidebar(e) {
     console.log("clicked");
     if (is_selecting_on) {
         var id = find_closest_module({x: (e.clientX - margin.left - iss_offset.x), y: (e.clientY - margin.top - iss_offset.y)});
 
-        if (images[id].attr("class") == "module_normal") {
-            // deselect current module
-            d3.select("g.module_selected")
-                      .attr("class", "module_normal");
-
-            // hide sidebar
-            d3.select("g.sidebar").transition()
-                .duration(200)
-                .attr("opacity", 0);
-        } else if (images[id].attr("class") == "module_highlighted"){
+        if (images[id].attr("class") == "module_highlighted"){
             // deselect previous module
             d3.select("g.module_selected")
                       .attr("class", "module_normal");
