@@ -16,7 +16,7 @@ function on_mousemove_tt(e) {
         var center = get_center(images[id].select("image"));
 
         var tt = d3.select("g.tooltip"),
-            tt_dx = 100,
+            tt_dx = 50,
             tt_dy = -50;
 
         tt.select("text")
@@ -48,7 +48,7 @@ function on_mouseout_tt(e) {
 }
 
 function init_tooltip() {
-    var tt = d3.select("svg").append("g")
+    var tt = d3.select("g").append("g")
         .attr("class", "tooltip")
         .attr("opacity", 0);
     
