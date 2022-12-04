@@ -1,8 +1,6 @@
 class Animation {   
-    constructor(pos, img, duration) {
+    constructor(duration) {
         this.root_modules = [25];
-        this.positions = pos;
-        this.images = img;
         this.duration = 500;
         
         // initialized on each call of animate()
@@ -21,10 +19,10 @@ class Animation {
     }
     
     get_leaves(mod_id, ends = []) {
-        if (this.positions[mod_id].children.length == 0)
+        if (positions[mod_id].children.length == 0)
             ends.push(mod_id);
         else {
-            this.positions[mod_id].children.forEach(ch => {
+            positions[mod_id].children.forEach(ch => {
                 ends = this.get_leaves(ch, ends);
             });
         }
@@ -32,11 +30,11 @@ class Animation {
     }
     
     move(mv, step_done, is_last_in_step, is_last) {
-        var x_old = +this.images[mv.id].select("image").attr("x"),
-            y_old = +this.images[mv.id].select("image").attr("y"),
+        var x_old = +images[mv.id].select("image").attr("x"),
+            y_old = +images[mv.id].select("image").attr("y"),
             [x, y] = move_in_3d(x_old, y_old, mv.v);
 
-        this.images[mv.id].select("image")
+        images[mv.id].select("image")
             .datum([this, step_done, is_last])
             .transition()
             .duration(this.duration)
@@ -81,8 +79,6 @@ class Animation {
     }
     
     construct_moves() {
-        const positions = this.positions;
-        
         function get_all_children(id, res) {
             positions[id].children.forEach(ch => {
                 res.add(ch);
@@ -153,9 +149,9 @@ class Animation {
         }
 
         if (this.reverse == true)
-            return construct(this.positions, this.ends, this.scalar, this.reverse).reverse();
+            return construct(positions, this.ends, this.scalar, this.reverse).reverse();
         else
-            return construct(this.positions, this.roots, this.scalar, this.reverse);
+            return construct(positions, this.roots, this.scalar, this.reverse);
     }
     
     animate_ready() {
@@ -255,5 +251,9 @@ class Animation {
     
     animate_all(scalar) {
         this.animate_helper(this.root_modules, scalar, false);
+    }
+    
+    finished() {
+        return Promise.all(this.promises);
     }
 }
