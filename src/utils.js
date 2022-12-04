@@ -93,7 +93,7 @@ function draw_axes(parent, axes, module, line_len=600) {
 
 function draw_points(p_arr) {
     p_arr.forEach(p => {
-        d3.select("g.main").append("circle")
+        d3.select("svg").append("circle")
             .attr("cx", p.x)
             .attr("cy", p.y)
             .attr("r", 5)

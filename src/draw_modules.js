@@ -23,7 +23,7 @@ var margin = {left: 50, right: 50, top: 50, bottom: 50 },
 var center = {x: width/2, y: height/2};
 var iss_offset = {
     x: -30,
-    y: 75*iss_scale
+    y: 75
 };
 
 //---------------------------------------------------- Functions ----------------------------------------------------//
@@ -119,11 +119,11 @@ function get_module_centers() {
     images.forEach((img, i) => {
         var raw_center = get_center(img.select("image"));
         centers.push({
-            x: raw_center.x + positions[i].x_offset,
-            y: raw_center.y + positions[i].y_offset
+            x: (raw_center.x + positions[i].x_offset)*iss_scale + margin.left + iss_offset.x,
+            y: (raw_center.y + positions[i].y_offset)*iss_scale + margin.top + iss_offset.y
         });
     });
-    
+    console.log(centers[8]);
     return centers;
 }
 

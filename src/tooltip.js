@@ -10,7 +10,7 @@ function hide_tooltip() {
 
 function on_mousemove_tt(e) {
     if (is_highlighting_on) {
-        var id = find_closest_module({x: (e.clientX - margin.left - iss_offset.x), y: (e.clientY - margin.top - iss_offset.y)});
+        var id = find_closest_module({x: e.clientX, y: e.clientY});
 
         d3.select("g.module_highlighted").attr("class", "module_normal");
 
@@ -19,7 +19,7 @@ function on_mousemove_tt(e) {
     }
     
     if (is_tooltip_on) {
-        var id = find_closest_module({x: (e.clientX - margin.left - iss_offset.x), y: (e.clientY - margin.top - iss_offset.y)});
+        var id = find_closest_module({x: e.clientX, y: e.clientY});
         var center = get_center(images[id].select("image"));
 
         var tt = d3.select("g.tooltip"),
@@ -45,7 +45,7 @@ function on_mousemove_tt(e) {
 }
 
 function on_mouseout_tt(e) {
-    var id = find_closest_module({x: (e.clientX - margin.left - iss_offset.x), y: (e.clientY - margin.top - iss_offset.y)});
+    var id = find_closest_module({x: e.clientX, y: e.clientY});
     d3.select("g.module_highlighted").attr("class", "module_normal");
     
     var tt = d3.select("g.tooltip");

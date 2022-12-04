@@ -23,7 +23,7 @@ function hide_sidebar() {
 function on_click_sidebar(e) {
     console.log("clicked");
     if (is_selecting_on) {
-        var id = find_closest_module({x: (e.clientX - margin.left - iss_offset.x), y: (e.clientY - margin.top - iss_offset.y)});
+        var id = find_closest_module({x: e.clientX, y: e.clientY});
 
         if (images[id].attr("class") == "module_highlighted"){
             // deselect previous module
