@@ -23,7 +23,7 @@ var margin = {left: 50, right: 50, top: 50, bottom: 50 },
 var center = {x: width/2, y: height/2};
 var iss_offset = {
     x: -30,
-    y: 75*iss_scale
+    y: 75
 };
 
 //---------------------------------------------------- Functions ----------------------------------------------------//
@@ -84,8 +84,8 @@ function create_svg() {
     // create an empty svg
     var svg = d3.select("body")
         .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom);
+        .attr("width", window.innerWidth)
+        .attr("height", window.innerHeight);
     var g_main = svg.append("g")
         .attr("class", "main")
     transform_iss(g_main, 0, 0);
@@ -119,15 +119,41 @@ function get_module_centers() {
     images.forEach((img, i) => {
         var raw_center = get_center(img.select("image"));
         centers.push({
-            x: raw_center.x + positions[i].x_offset,
-            y: raw_center.y + positions[i].y_offset
+            x: (raw_center.x + positions[i].x_offset)*iss_scale + margin.left + iss_offset.x,
+            y: (raw_center.y + positions[i].y_offset)*iss_scale + margin.top + iss_offset.y
         });
     });
-    
+    console.log(centers[8]);
     return centers;
 }
 
 //------------------------------------------------------ Code -------------------------------------------------------//
+addEventListener('resize', (event) => {
+    // resize svg
+    d3.select("svg")
+        .attr("width", window.innerWidth)
+        .attr("height", window.innerHeight);
+    
+    // calculate new iss scale
+    iss_scale = Math.min(window.innerWidth/2140, window.innerHeight/1080);
+
+    // get main g
+    var g = d3.select("g.main");
+    
+    // get old transform of the main g
+    var t = get_transform(g.attr("transform"));
+    console.log(t);
+    
+    // resize main g
+    g.attr("transform", "translate(" +
+           t.translateX + "," +
+           t.translateY + ")" + " scale(" +
+           iss_scale + ")");
+    
+    // resize sidebar
+    rescale_sidebar();
+});
+
 document.addEventListener("click", function (event) {
     console.log("x : " + event.clientX + ", y : " + event.clientY);
 });

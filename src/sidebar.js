@@ -21,9 +21,8 @@ function hide_sidebar() {
 }
 
 function on_click_sidebar(e) {
-    console.log("clicked");
     if (is_selecting_on) {
-        var id = find_closest_module({x: (e.clientX - margin.left - iss_offset.x), y: (e.clientY - margin.top - iss_offset.y)});
+        var id = find_closest_module({x: e.clientX, y: e.clientY});
 
         if (images[id].attr("class") == "module_highlighted"){
             // deselect previous module
@@ -45,6 +44,22 @@ function on_click_sidebar(e) {
                 .attr("opacity", 1);
         }
     }
+}
+
+function rescale_sidebar() {
+    var scale = window.innerWidth / 1920;
+    var w = 400*scale;
+    
+    var sidebar = d3.select("g.sidebar")
+        .attr("transform", ("translate(" + (window.innerWidth - w) + "," + 0 + ")"));
+    
+    sidebar.select("rect")
+        .attr("width", w)
+        .attr("height", window.innerHeight);
+    
+    sidebar.select("text.title")
+        .attr("x", w/2)
+        .attr("y", 60*scale);
 }
 
 function init_sidebar() {
