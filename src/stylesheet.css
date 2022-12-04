@@ -10,9 +10,9 @@ svg {
 .axes text {
     fill: red;
     text-shadow:    -1px 1px 0 #000,
-                    1px 1px 0 #000,
-                    1px -1px 0 #000,
-                    -1px -1px 0 #000;
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
 }
 .header {
     min-width: 100vw;
@@ -114,6 +114,18 @@ canvas {
     z-index: -1;
 }
 
+iframe {
+    position: fixed;
+    top: 70%;
+    right: 1%;
+    width: 20%;
+    height: 20%;
+    display: none;
+    opacity: 0;
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
 .sidebar rect {
     opacity: 0.95;
     fill: #1B2631;
@@ -139,9 +151,9 @@ text {
     font-size: 1.3em;
     pointer-events:none;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .module_highlighted image {
