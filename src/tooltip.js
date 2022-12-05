@@ -1,5 +1,16 @@
+import {get_center} from "./utils.js";
+import {find_closest_module} from "./draw_modules.js";
+
 var is_tooltip_on = false;
 var is_highlighting_on = false;
+
+function toggle_tooltip_events() {
+    is_tooltip_on = !is_tooltip_on;
+}
+
+function toggle_highlighting_events() {
+    is_highlighting_on = !is_highlighting_on;
+}
 
 function hide_tooltip() {
     d3.select("g.module_highlighted")
@@ -8,19 +19,19 @@ function hide_tooltip() {
         .attr("opacity", 0);
 }
 
-function on_mousemove_tt(e) {
+function on_mousemove_tt(data, e) {
     if (is_highlighting_on) {
-        var id = find_closest_module({x: e.clientX, y: e.clientY});
+        var id = find_closest_module(data, {x: e.clientX, y: e.clientY});
 
         d3.select("g.module_highlighted").attr("class", "module_normal");
 
-        if (images[id].attr("class") == "module_normal")
-            images[id].attr("class", "module_highlighted")
+        if (data.images[id].attr("class") == "module_normal")
+            data.images[id].attr("class", "module_highlighted")
     }
     
     if (is_tooltip_on) {
-        var id = find_closest_module({x: e.clientX, y: e.clientY});
-        var center = get_center(images[id].select("image"));
+        var id = find_closest_module(data, {x: e.clientX, y: e.clientY});
+        var center = get_center(data.images[id].select("image"));
 
         var tt = d3.select("g.tooltip"),
             tt_dx = 50,
@@ -29,7 +40,7 @@ function on_mousemove_tt(e) {
         tt.select("text")
             .attr("dx", center.x + tt_dx)
             .attr("dy", center.y + tt_dy)
-            .text(module_data[id].name);
+            .text(data.modules[id].name);
 
         var w = tt.select("text").node().getComputedTextLength();
 
@@ -44,8 +55,8 @@ function on_mousemove_tt(e) {
     }
 }
 
-function on_mouseout_tt(e) {
-    var id = find_closest_module({x: e.clientX, y: e.clientY});
+function on_mouseout_tt(data, e) {
+    var id = find_closest_module(data, {x: e.clientX, y: e.clientY});
     d3.select("g.module_highlighted").attr("class", "module_normal");
     
     var tt = d3.select("g.tooltip");
@@ -54,7 +65,7 @@ function on_mouseout_tt(e) {
         .attr("opacity", 0);
 }
 
-function init_tooltip() {
+function init_tooltip(data) {
     var tt = d3.select("g").append("g")
         .attr("class", "tooltip")
         .attr("opacity", 0);
@@ -73,6 +84,13 @@ function init_tooltip() {
         .text("Name");
     
     // set up highlighting listener
-    document.querySelector("g").addEventListener("mousemove", function(event) { on_mousemove_tt(event); });
-    document.querySelector("g").addEventListener("mouseout", function(event) { on_mouseout_tt(event); });
+    document.querySelector("g").addEventListener("mousemove", function(event) { on_mousemove_tt(data, event); });
+    document.querySelector("g").addEventListener("mouseout", function(event) { on_mouseout_tt(data, event); });
 }
+
+export {
+    init_tooltip,
+    hide_tooltip,
+    toggle_highlighting_events,
+    toggle_tooltip_events
+};

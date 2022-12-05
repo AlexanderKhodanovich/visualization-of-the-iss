@@ -11,11 +11,17 @@
         <script type= "text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
 
         <!-- Scripts -->
-        <script type="text/javascript" src="utils.js"></script>
-        <script type="text/javascript" src="draw_modules.js"></script>
-        <script type="text/javascript" src="animate_modules.js"></script>
-        <script type="text/javascript" src="tooltip.js"></script>
-        <script type="text/javascript" src="sidebar.js"></script>
+        <script type="module" src="shapes.js"></script>
+        <script type="module" src="stars.js"></script>
+        <script src="mainloop.js"></script>
+        <script type="module" src="animate_stars.js"></script>
+        
+        <script type="module" src="utils.js"></script>
+        <script type="module" src="draw_modules.js"></script>
+        <script type="module" src="animate_modules.js"></script>
+        <script type="module" src="tooltip.js"></script>
+        <script type="module" src="sidebar.js"></script>
+        <script type="module" src="page_control.js"></script>
     </head>
 
     <body>
@@ -29,7 +35,7 @@
         </div>
         <iframe src="https://ustream.tv/embed/17074538?autoplay=true" allow="autoplay" title="ISS Live Feed"></iframe>
         <canvas id="stars"></canvas>
-        <script type="text/javascript" src="main.js"></script>
+        <script type="module" src="main.js"></script>
         <div class="footer">
             <p>
                 <br>
@@ -96,8 +102,4 @@
             </div>
         </div>
     </body>
-    <script src="mainloop.js"></script>
-    <script type="module" src="shapes.js"></script>
-    <script type="module" src="stars.js"></script>
-    <script type="module" src="animate_stars.js"></script>
 </html>

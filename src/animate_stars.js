@@ -15,7 +15,7 @@ addEventListener('visibilitychange', (event) => {
 });
 
 addEventListener('resize', (event) => {
-    starsystem.resize();
+    
 });
 
 function update(delta) {
@@ -26,4 +26,15 @@ function draw(interpolationPercentage) {
     starsystem.draw(interpolationPercentage);
 }
 
-MainLoop.setUpdate(update).setDraw(draw).setMaxAllowedFPS(FPS).start();
+function resize_stars() {
+    starsystem.resize();
+}
+
+function init_stars() {
+    MainLoop.setUpdate(update).setDraw(draw).setMaxAllowedFPS(FPS).start();
+}
+
+export {
+    init_stars,
+    resize_stars
+};
