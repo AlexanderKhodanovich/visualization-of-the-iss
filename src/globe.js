@@ -76,7 +76,7 @@ function drawMarkers() {
             //console.log(locations[0]);
             const coordinate = locations[0];
             var gdistance = d3.geoDistance(coordinate, projection.invert(center));
-            return gdistance > 1.57 ? 'none' : 'steelblue';
+            return gdistance > 1.57 ? 'none' : 'red';
         })
         .attr('r', 7);
 

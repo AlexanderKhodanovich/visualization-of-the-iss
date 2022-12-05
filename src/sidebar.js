@@ -83,7 +83,7 @@ function init_sidebar(data) {
     var scale = window.innerWidth / 1920;
     var w = 400*scale;
 
-    var sidebar = d3.select("#iss").append("g")
+    var sidebar = d3.select("svg.iss").append("g")
         .attr("class", "sidebar")
         .attr("transform", ("translate(" + (window.innerWidth - w) + "," + 0 + ")"))
         .attr("opacity", "0");
@@ -100,7 +100,7 @@ function init_sidebar(data) {
         .attr("y", 60*scale)
         .text("Zvezda (Service Module)");
 
-    document.querySelector("#iss").addEventListener("click", function(event) { on_click_sidebar(data, event); });
+    document.querySelector("svg.iss").addEventListener("click", function(event) { on_click_sidebar(data, event); });
 }
 
 export {

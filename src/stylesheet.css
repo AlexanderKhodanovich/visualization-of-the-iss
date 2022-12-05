@@ -1,8 +1,8 @@
-#iss {
+svg.iss {
     display: none;
 }
 
-#globe {
+.globe {
     margin: 0;
     position: absolute;
     top: 45%;

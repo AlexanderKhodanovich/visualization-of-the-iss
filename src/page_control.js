@@ -4,7 +4,7 @@ import {toggle_selecting_events, hide_sidebar} from "./sidebar.js";
 
 function on_start_click(data) {
     // get objects
-    var svg = d3.select("#iss");
+    var svg = d3.select("svg.iss");
     var header = d3.select(".header");
     var globe = d3.select("svg.globe");
     var footer = d3.select(".footer");
@@ -26,7 +26,7 @@ function on_start_click(data) {
     globe.transition()
         .duration(1000)
         .style("opacity", 0)
-        .on("end", function() { globe.style("display", "none"); });
+        .on("end", function() { globe.style("display", "none"); globe.remove(); });
 
     // fade out footer
     footer.transition()
@@ -37,7 +37,7 @@ function on_start_click(data) {
 
 function on_back_click(data) {
     // get objects
-    var svg = d3.select("#iss");
+    var svg = d3.select("svg.iss");
     var g = d3.select("g.main")
     var bb = d3.select(".back");
 
@@ -91,7 +91,7 @@ function start_normal(data) {
 
 function start_interactive(data) {
     // get objects
-    var svg = d3.select("#iss");
+    var svg = d3.select("svg.iss");
     var g = d3.select("g.main");
 
     // show svg
@@ -102,9 +102,6 @@ function start_interactive(data) {
 
     // show ISS
     transform_iss(g, 0, 0, 2000).then(function() {
-        toggle_highlighting_events();
-        toggle_tooltip_events();
-        toggle_selecting_events();
 
         // animate ISS
         data.animation.animate_all(50);
@@ -122,7 +119,13 @@ function start_interactive(data) {
                 .style("display", "block")
                 .transition()
                 .duration(500)
-                .style("opacity", 1);
+                .style("opacity", 1)
+                .on("end", function() {
+                    // enable selecting/highlighting/tooltip
+                    toggle_highlighting_events();
+                    toggle_tooltip_events();
+                    toggle_selecting_events();
+                });
         });
     });
 }
