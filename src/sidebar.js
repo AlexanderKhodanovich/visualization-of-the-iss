@@ -81,7 +81,7 @@ function init_sidebar() {
     var w = 400*scale;
 
     console.log(scale);
-    var sidebar = d3.select("svg").append("g")
+    var sidebar = d3.select("#iss").append("g")
     .attr("class", "sidebar")
     .attr("transform", ("translate(" + (window.innerWidth - w) + "," + 0 + ")"))
     .attr("opacity", "0");
@@ -100,7 +100,7 @@ function init_sidebar() {
 
     d3.json(path_modules).then(function(data) {
         module_data = data;
-        var svg = document.querySelector("svg");
+        var svg = document.querySelector("#iss");
         var g = document.querySelector("g.main");
         svg.addEventListener("click", function(event) { on_click_sidebar(event); });
     });

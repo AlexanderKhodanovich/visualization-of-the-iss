@@ -9,6 +9,7 @@
 
         <!-- D3.js Source -->
         <script type= "text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/topojson.v1.min.js"></script>
 
         <!-- Scripts -->
         <script type="text/javascript" src="utils.js"></script>
@@ -16,19 +17,26 @@
         <script type="text/javascript" src="animate_modules.js"></script>
         <script type="text/javascript" src="tooltip.js"></script>
         <script type="text/javascript" src="sidebar.js"></script>
-    </head>
+        
+    </head> 
 
     <body>
         <div class="header">
             <h1>International Space Station&#8482;</h1>
-            <p>Insights!</p>
+            <p>The largest modular space station; An astronaut's home base; The pinnacle of human collaboration; 
+            The International Space Station is a multinational project that serves as a microgravity and space research laboratory,
+            where scientific research is conducted in astrobiology, astronomy, meteorology, physics, and other fields. 
+            Want to know more? Click the button below :)</p>
             <button id="center">BEGIN</button>
         </div>
         <div class="back">
             <button>BACK</button>
         </div>
+        
         <iframe src="https://ustream.tv/embed/17074538?autoplay=true" allow="autoplay" title="ISS Live Feed"></iframe>
         <canvas id="stars"></canvas>
+        <svg id="globe"></svg>
+        <script type="text/javascript" src="globe.js"></script>
         <script type="text/javascript" src="main.js"></script>
         <div class="footer">
             <p>

@@ -4,7 +4,7 @@ var animation = null;
 
 function on_start_click() {
     // get objects
-    var svg = d3.select("svg");
+    var svg = d3.select("#iss");
     var header = d3.select(".header");
     var footer = d3.select(".footer");
 
@@ -30,7 +30,7 @@ function on_start_click() {
 
 function on_back_click() {
     // get objects
-    var svg = d3.select("svg");
+    var svg = d3.select("#iss");
     var g = d3.select("g.main")
     var bb = d3.select(".back");
 
@@ -84,7 +84,7 @@ function start_normal() {
 
 function start_interactive() {
     // get objects
-    var svg = d3.select("svg");
+    var svg = d3.select("#iss");
     var g = d3.select("g.main");
 
     // show svg

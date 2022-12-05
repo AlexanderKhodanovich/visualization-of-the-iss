@@ -84,6 +84,7 @@ function create_svg() {
     // create an empty svg
     var svg = d3.select("body")
         .append("svg")
+        .attr("id", "iss")
         .attr("width", window.innerWidth)
         .attr("height", window.innerHeight);
     var g_main = svg.append("g")
