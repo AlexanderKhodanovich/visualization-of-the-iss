@@ -2,9 +2,9 @@ import {init_sidebar} from "./sidebar.js";
 import {init_tooltip} from "./tooltip.js";
 import {create_svg, resize_svg, draw_modules, transform_iss} from "./draw_modules.js";
 import {Animation} from "./animate_modules.js";
-import {on_start_click, on_back_click} from "./page_control.js";
+import {on_start_click, on_back_click, on_toggle_feature_click} from "./page_control.js";
 import {init_stars, resize_stars} from "./animate_stars.js";
-import {init_globe} from "./globe.js";
+import {init_globe, resize_globe} from "./globe.js";
 
 const path_positions = "../data/positions.json";
 const path_modules = "../data/modules.json";
@@ -46,11 +46,15 @@ init_stars();
 init_globe();
 
 // add listeners
-document.addEventListener("click", function (event) {
+d3.select("label.switch input").on("click", function() {
+    on_toggle_feature_click();
+});
+document.addEventListener("click", function(event) {
     console.log("x : " + event.clientX + ", y : " + event.clientY);
 });
 addEventListener('resize', (event) => {
     resize_stars();
+    resize_globe();
     resize_svg(event);
 });
 

@@ -5,9 +5,9 @@ import {toggle_selecting_events, hide_sidebar} from "./sidebar.js";
 function on_start_click(data) {
     // get objects
     var svg = d3.select("svg.iss");
-    var header = d3.select(".header");
-    var globe = d3.select("svg.globe");
-    var footer = d3.select(".footer");
+    var header = d3.select("div.header");
+    var feature_div = d3.select("div.secondary_visualizations");
+    var footer = d3.select("div.footer");
 
     // fade out header
     header.transition()
@@ -22,11 +22,11 @@ function on_start_click(data) {
         start_interactive(data);
     });
     
-    // fade out globe
-    globe.transition()
+    // fade out feature div
+    feature_div.transition()
         .duration(1000)
         .style("opacity", 0)
-        .on("end", function() { globe.style("display", "none"); globe.remove(); });
+        .on("end", function() { feature_div.style("display", "none"); });
 
     // fade out footer
     footer.transition()
@@ -39,7 +39,7 @@ function on_back_click(data) {
     // get objects
     var svg = d3.select("svg.iss");
     var g = d3.select("g.main")
-    var bb = d3.select(".back");
+    var bb = d3.select("div.back");
 
     // hide back button
     bb.transition()
@@ -75,14 +75,20 @@ function on_back_click(data) {
 
 function start_normal(data) {
     // get objects
-    var header = d3.select(".header");
-    var footer = d3.select(".footer");
+    var header = d3.select("div.header");
+    var feature_div = d3.select("div.secondary_visualizations")
+    var footer = d3.select("div.footer");
 
     // fade in header
     header.style("display", "block").transition()
         .duration(1000)
-        .style("opacity", 1)
+        .style("opacity", 1);
 
+    // fade in globe
+    feature_div.style("display", "block").transition()
+        .duration(1000)
+        .style("opacity", 1);
+    
     // fade in footer
     footer.style("display", "block").transition()
         .duration(1000)
@@ -112,13 +118,6 @@ function start_interactive(data) {
                 .style("display", "block")
                 .transition()
                 .duration(500)
-                .style("opacity", 1);
-            
-            // show live feed
-            d3.select("iframe")
-                .style("display", "block")
-                .transition()
-                .duration(500)
                 .style("opacity", 1)
                 .on("end", function() {
                     // enable selecting/highlighting/tooltip
@@ -130,7 +129,43 @@ function start_interactive(data) {
     });
 }
 
+function on_toggle_feature_click() {
+    // get objects
+    var globe = d3.select("svg.globe");
+    var feed = d3.select("iframe.live_feed");
+    
+    // get current state
+    var state = +d3.select("label.switch input").attr("state");
+    
+    if (state == 0) {
+        globe.transition()
+            .duration(200)
+            .style("opacity", 0)
+            .on("end", function() {
+                globe.style("display", "none");
+                feed.style("display", "block").transition()
+                    .duration(200)
+                    .style("opacity", 1);
+            });
+    } else {
+        feed.transition()
+            .duration(200)
+            .style("opacity", 0)
+            .on("end", function() {
+                feed.style("display", "none");
+                globe.style("display", "block").transition()
+                    .duration(200)
+                    .style("opacity", 1);
+            });
+    }
+    
+    // switch state
+    d3.select("label.switch input").attr("state", ((state + 1) % 2));
+    
+}
+
 export {
     on_start_click,
-    on_back_click
+    on_back_click,
+    on_toggle_feature_click
 };

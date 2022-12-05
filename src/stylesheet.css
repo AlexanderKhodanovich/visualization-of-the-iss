@@ -2,14 +2,6 @@ svg.iss {
     display: none;
 }
 
-.globe {
-    margin: 0;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    background-color: transparent;
-}
 .axes path {
     stroke: red;
     stroke-width: 4;
@@ -38,10 +30,9 @@ svg.iss {
 .header p {
     margin: 0;
     position: absolute;
-    top: 13%;
+    top: calc(28% - 160px);
     left: 50%;
     transform: translate(-50%, 0);
-    width: 480px;
     text-align: center;
     font-family: Sans-Serif; 
     font-size: 18px;
@@ -71,15 +62,15 @@ button:hover {
     color: white;
 }
 
-#center {
+button.begin {
     margin: 0;
     position: absolute;
-    top: 33%;
+    top: calc(48% - 160px);
     left: 50%;
     transform: translate(-50%, 0);
 }
 
-.back {
+div.back {
     position: fixed;
     top: 2%;
     left: 1%;
@@ -128,12 +119,12 @@ canvas {
     z-index: -1;
 }
 
-iframe {
-    position: fixed;
-    top: 70%;
-    right: 1%;
-    width: 20%;
-    height: 20%;
+iframe.live_feed {
+    position: absolute;
+    bottom: 100px;
+    left: 25%;
+    width: 50%;
+    height: 50%;
     display: none;
     opacity: 0;
     border-radius: 8px;
@@ -176,4 +167,89 @@ text {
 
 .module_selected image {
     filter: invert(0) sepia(1) saturate(10) hue-rotate(16deg);
+}
+
+.globe {
+    margin: 0;
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    background-color: transparent;
+    transform-origin: center;
+    transform: translate(-50%, 0%);
+}
+
+div.vis_slider {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+}
+
+.vis_slider p {
+    position: relative;
+    right: 100px;
+    font-family: Sans-Serif; 
+    font-size: 18px;
+    color: white;
+}
+
+.switch {
+  position: relative;
+  top: -45px;
+  left: 50px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: green;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

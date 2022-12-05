@@ -73,7 +73,6 @@ function drawMarkers() {
         .attr('cx', d => projection(d)[0])
         .attr('cy', d => projection(d)[1])
         .attr('fill', d => {
-            //console.log(locations[0]);
             const coordinate = locations[0];
             var gdistance = d3.geoDistance(coordinate, projection.invert(center));
             return gdistance > 1.57 ? 'none' : 'red';
@@ -85,10 +84,18 @@ function drawMarkers() {
     });
 }
 
+function resize_globe() {
+    var scale = Math.min(window.innerWidth/2140, window.innerHeight/1080);
+    var globe = d3.select("svg.globe");
+    
+    globe.style("transform", "translate(-50%, 0%)" +
+                " scale(" + scale +")");
+}
+
 function init_globe() {
     setTimeout(drawGlobe(), 5000);    
     drawGraticule();
     enableRotation();
 }
 
-export {init_globe};
+export {init_globe, resize_globe};

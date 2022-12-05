@@ -36,7 +36,6 @@ function on_mousemove_tt(data, e) {
         var tt = d3.select("g.tooltip"),
             tt_dx = 50,
             tt_dy = -50;
-        console.log(tt);
         tt.select("text")
             .attr("dx", center.x + tt_dx)
             .attr("dy", center.y + tt_dy)
