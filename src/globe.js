@@ -31,7 +31,7 @@ function drawGlobe() {
                 .attr("y", "50%")
                 .style("stroke", "white")
                 .style("stroke-width", "1px")
-                .style("fill", (d, i) => 'green')
+                .style("fill", (d, i) => '#228B22')
                 .style("opacity", "1");
                 drawMarkers();
     });
@@ -43,7 +43,7 @@ function drawGraticule() {
 
     svg.append("circle")
         .attr("r", 250)
-        .style("fill", "blue")
+        .style("fill", "#2B65EC")
         .attr("cx", "50%")
         .attr("cy", "50%")
     
@@ -51,7 +51,7 @@ function drawGraticule() {
         .datum(graticule)
         .attr("class", "graticule")
         .attr("d", path)
-        .style("fill", "blue")
+        .style("fill", "#2B65EC")
         .style("stroke", "#ccc");
 }
 
