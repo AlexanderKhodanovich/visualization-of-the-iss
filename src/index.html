@@ -33,15 +33,24 @@
             The International Space Station is a multinational project that serves as a microgravity and space research laboratory,
             where scientific research is conducted in astrobiology, astronomy, meteorology, physics, and other fields. 
             Want to know more? Click the button below :)</p>
-            <button id="center">BEGIN</button>
+            <button class="begin">BEGIN</button>
         </div>
         <div class="back">
             <button>BACK</button>
         </div>
-        <iframe src="https://ustream.tv/embed/17074538?autoplay=true" allow="autoplay" title="ISS Live Feed"></iframe>
         <canvas id="stars"></canvas>
-        <svg id="globe" class="globe"></svg>
-        
+        <div class="secondary_visualizations">
+          <svg class="globe"></svg>
+          <iframe class="live_feed" src="https://ustream.tv/embed/17074538?autoplay=true" allow="autoplay" title="ISS Live Feed"></iframe>
+          <div class="vis_slider">
+            <p>Toggle Live Feed</p>
+            <label class="switch">
+              <input type="checkbox" state="0">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          
+        </div>
         <script type="module" src="main.js"></script>
         <div class="footer">
             <p>

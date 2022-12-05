@@ -36,7 +36,6 @@ function on_mousemove_tt(data, e) {
         var tt = d3.select("g.tooltip"),
             tt_dx = 50,
             tt_dy = -50;
-
         tt.select("text")
             .attr("dx", center.x + tt_dx)
             .attr("dy", center.y + tt_dy)
@@ -66,7 +65,7 @@ function on_mouseout_tt(data, e) {
 }
 
 function init_tooltip(data) {
-    var tt = d3.select("g").append("g")
+    var tt = d3.select("g.main").append("g")
         .attr("class", "tooltip")
         .attr("opacity", 0);
     
@@ -84,8 +83,8 @@ function init_tooltip(data) {
         .text("Name");
     
     // set up highlighting listener
-    document.querySelector("g").addEventListener("mousemove", function(event) { on_mousemove_tt(data, event); });
-    document.querySelector("g").addEventListener("mouseout", function(event) { on_mouseout_tt(data, event); });
+    document.querySelector("g.main").addEventListener("mousemove", function(event) { on_mousemove_tt(data, event); });
+    document.querySelector("g.main").addEventListener("mouseout", function(event) { on_mouseout_tt(data, event); });
 }
 
 export {
