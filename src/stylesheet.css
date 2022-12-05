@@ -1,7 +1,15 @@
-svg {
+#iss {
     display: none;
 }
 
+#globe {
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: transparent;
+}
 .axes path {
     stroke: red;
     stroke-width: 4;
@@ -28,9 +36,15 @@ svg {
 }
 
 .header p {
+    margin: 0;
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 480px;
     text-align: center;
     font-family: Sans-Serif; 
-    font-size: 16px;
+    font-size: 18px;
     color: white;
 }
 
@@ -60,7 +74,7 @@ button:hover {
 #center {
     margin: 0;
     position: absolute;
-    top: 20%;
+    top: 33%;
     left: 50%;
     transform: translate(-50%, 0);
 }

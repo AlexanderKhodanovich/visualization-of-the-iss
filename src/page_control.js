@@ -4,8 +4,9 @@ import {toggle_selecting_events, hide_sidebar} from "./sidebar.js";
 
 function on_start_click(data) {
     // get objects
-    var svg = d3.select("svg");
+    var svg = d3.select("#iss");
     var header = d3.select(".header");
+    var globe = d3.select("svg.globe");
     var footer = d3.select(".footer");
 
     // fade out header
@@ -20,6 +21,12 @@ function on_start_click(data) {
         // start interactive mode
         start_interactive(data);
     });
+    
+    // fade out globe
+    globe.transition()
+        .duration(1000)
+        .style("opacity", 0)
+        .on("end", function() { globe.style("display", "none"); });
 
     // fade out footer
     footer.transition()
@@ -30,7 +37,7 @@ function on_start_click(data) {
 
 function on_back_click(data) {
     // get objects
-    var svg = d3.select("svg");
+    var svg = d3.select("#iss");
     var g = d3.select("g.main")
     var bb = d3.select(".back");
 
@@ -84,7 +91,7 @@ function start_normal(data) {
 
 function start_interactive(data) {
     // get objects
-    var svg = d3.select("svg");
+    var svg = d3.select("#iss");
     var g = d3.select("g.main");
 
     // show svg

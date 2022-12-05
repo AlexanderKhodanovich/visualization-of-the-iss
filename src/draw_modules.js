@@ -21,7 +21,7 @@ var iss_offset = {
 //---------------------------------------------------- Functions ----------------------------------------------------//
 function resize_svg() {
     // resize svg
-    d3.select("svg")
+    d3.select("#iss")
         .attr("width", window.innerWidth)
         .attr("height", window.innerHeight);
     
@@ -101,6 +101,7 @@ function create_svg() {
     // create an empty svg
     var svg = d3.select("body")
         .append("svg")
+        .attr("id", "iss")
         .attr("width", window.innerWidth)
         .attr("height", window.innerHeight);
     var g_main = svg.append("g")
