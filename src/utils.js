@@ -36,9 +36,9 @@ function get_center(obj) {
 }
 
 function move_in_2d(target, x, y) {
-    target.select("image")
-        .attr("x", x - IMAGE_WIDTH / 2)
-        .attr("y", y - IMAGE_HEIGHT / 2);
+    target
+        .attr("x", x)
+        .attr("y", y);
 }
 
 // calculates the new x and y as if the object is moved in 3d
@@ -121,3 +121,13 @@ function draw_points(p_arr) {
             .style("fill", "red");
     });
 }
+
+export {
+    get_transform,
+    distance,
+    get_center,
+    move_in_2d,
+    move_in_3d,
+    draw_axes,
+    draw_points
+};
