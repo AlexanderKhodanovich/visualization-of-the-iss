@@ -30,7 +30,7 @@ svg.iss {
 .header p {
     margin: 0;
     position: absolute;
-    top: calc(28% - 160px);
+    top: 100px;
     left: 50%;
     transform: translate(-50%, 0);
     text-align: center;
@@ -65,7 +65,7 @@ button:hover {
 button.begin {
     margin: 0;
     position: absolute;
-    top: calc(48% - 160px);
+    top: 290px;
     left: 50%;
     transform: translate(-50%, 0);
 }
@@ -121,14 +121,13 @@ canvas {
 
 iframe.live_feed {
     position: absolute;
-    bottom: 100px;
-    left: 25%;
-    width: 50%;
-    height: 50%;
+    bottom: 120px;
+    left: 50%;
     display: none;
     opacity: 0;
     border-radius: 8px;
     border: 2px solid white;
+    transform: translate(-50%, 0%);
 }
 
 .sidebar rect {
@@ -169,14 +168,17 @@ text {
     filter: invert(0) sepia(1) saturate(10) hue-rotate(16deg);
 }
 
-.globe {
+div.globe_pos {
+    
+}
+
+svg.globe {
     margin: 0;
     position: absolute;
-    bottom: 100px;
     left: 50%;
     background-color: transparent;
-    transform-origin: center;
-    transform: translate(-50%, 0%);
+    transform-origin: top center;
+    
 }
 
 div.vis_slider {
