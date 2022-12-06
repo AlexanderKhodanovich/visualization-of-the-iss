@@ -2,12 +2,19 @@ import {init_sidebar} from "./sidebar.js";
 import {init_tooltip} from "./tooltip.js";
 import {create_svg, resize_svg, draw_modules, transform_iss} from "./draw_modules.js";
 import {Animation} from "./animate_modules.js";
-import {on_start_click, on_back_click, on_toggle_feature_click} from "./page_control.js";
+import {on_start_click, on_back_click, on_toggle_feature_click, resize_feed, is_interactive} from "./page_control.js";
 import {init_stars, resize_stars} from "./animate_stars.js";
 import {init_globe, resize_globe} from "./globe.js";
 
 const path_positions = "../data/positions.json";
 const path_modules = "../data/modules.json";
+
+function resize_all() {
+    resize_stars();
+    resize_globe(is_interactive());
+    resize_feed();
+    resize_svg(event);
+}
 
 function main(positions, modules) {
     // create main svg
@@ -15,6 +22,9 @@ function main(positions, modules) {
     
     // draw iss
     var images = draw_modules(positions);
+    
+    // resize once
+    resize_all();
     
     // create animation object
     var animation = new Animation(positions, images, 500);
@@ -52,11 +62,7 @@ d3.select("label.switch input").on("click", function() {
 document.addEventListener("click", function(event) {
     console.log("x : " + event.clientX + ", y : " + event.clientY);
 });
-addEventListener('resize', (event) => {
-    resize_stars();
-    resize_globe();
-    resize_svg(event);
-});
+addEventListener('resize', (event) => { resize_all(); });
 
 // parse positions and modules
 Promise.all([d3.json(path_positions), d3.json(path_modules)]).then(([positions, modules]) => {

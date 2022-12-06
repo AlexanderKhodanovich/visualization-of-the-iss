@@ -2,6 +2,12 @@ import {transform_iss} from "./draw_modules.js";
 import {toggle_highlighting_events, toggle_tooltip_events, hide_tooltip} from "./tooltip.js";
 import {toggle_selecting_events, hide_sidebar} from "./sidebar.js";
 
+var interactive = false;
+
+function is_interactive() {
+    return interactive;
+}
+
 function on_start_click(data) {
     // get objects
     var svg = d3.select("svg.iss");
@@ -92,7 +98,11 @@ function start_normal(data) {
     // fade in footer
     footer.style("display", "block").transition()
         .duration(1000)
-        .style("opacity", 1);
+        .style("opacity", 1)
+        .on("end", function() {
+            // now in normal mode
+            interactive = false;
+        });
 }
 
 function start_interactive(data) {
@@ -124,6 +134,9 @@ function start_interactive(data) {
                     toggle_highlighting_events();
                     toggle_tooltip_events();
                     toggle_selecting_events();
+                
+                    // now in interactive mode
+                    interactive = true;
                 });
         });
     });
@@ -164,8 +177,30 @@ function on_toggle_feature_click() {
     
 }
 
+function resize_feed() {
+    // define constants
+    const mgn_top = 60;
+    const mgn_side = 20;
+    const mgn_bottom = 20;
+    
+    // calculate
+    var feed = d3.select("iframe.live_feed");
+    const rect_btn = document.querySelector("button.begin").getBoundingClientRect();
+    const rect_switch = document.querySelector("div.vis_slider").getBoundingClientRect();
+    const height = window.innerHeight - rect_btn.y - rect_btn.height - rect_switch.height - mgn_top - mgn_bottom;
+    const width = Math.min((window.innerWidth - mgn_side*2), (height*16/9));
+    const top = rect_btn.y + rect_btn.height + mgn_top;
+    
+    // set parameters
+    feed.style("width", width + "px");
+    feed.style("height", height + "px");
+    feed.style("top", top + "px");
+}
+
 export {
     on_start_click,
     on_back_click,
-    on_toggle_feature_click
+    on_toggle_feature_click,
+    resize_feed,
+    is_interactive
 };

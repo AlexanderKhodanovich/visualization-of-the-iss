@@ -31,7 +31,7 @@ function drawGlobe() {
                 .attr("y", "50%")
                 .style("stroke", "white")
                 .style("stroke-width", "1px")
-                .style("fill", (d, i) => 'green')
+                .style("fill", (d, i) => '#228B22')
                 .style("opacity", "1");
                 drawMarkers();
     });
@@ -43,7 +43,7 @@ function drawGraticule() {
 
     svg.append("circle")
         .attr("r", 250)
-        .style("fill", "blue")
+        .style("fill", "#2B65EC")
         .attr("cx", "50%")
         .attr("cy", "50%")
     
@@ -51,7 +51,7 @@ function drawGraticule() {
         .datum(graticule)
         .attr("class", "graticule")
         .attr("d", path)
-        .style("fill", "blue")
+        .style("fill", "#2B65EC")
         .style("stroke", "#ccc");
 }
 
@@ -84,18 +84,41 @@ function drawMarkers() {
     });
 }
 
-function resize_globe() {
-    var scale = Math.min(window.innerWidth/2140, window.innerHeight/1080);
-    var globe = d3.select("svg.globe");
+function resize_globe(is_interactive) {
     
-    globe.style("transform", "translate(-50%, 0%)" +
-                " scale(" + scale +")");
+    // The globe is big and in the middle of the screen
+    if (!is_interactive) {
+        // define constants
+        const mgn_top = 60;
+        const mgn_side = 20;
+        const mgn_bottom = 20;
+
+        // calculate
+        var globe_div = d3.select("div.globe_pos");
+        var globe = d3.select("svg.globe");
+        const rect_btn = document.querySelector("button.begin").getBoundingClientRect();
+        const rect_switch = document.querySelector("div.vis_slider").getBoundingClientRect();
+        const h_needed = window.innerHeight - rect_btn.y - rect_btn.height - rect_switch.height - mgn_top - mgn_bottom;
+        const scale = Math.min(h_needed / (+globe.attr("height")), (window.innerWidth - 2*mgn_side) / (+globe.attr("width")));
+        const top = rect_btn.y + rect_btn.height + mgn_top;
+
+        // set properties
+        globe.style("transform", "translate(-50%, 0%)" +
+                    " scale(" + scale + ")");
+
+        globe.style("top", top + "px");
+    }
+    // the globe is small and in the bottom right corner
+    else {
+        
+    }
 }
 
 function init_globe() {
     setTimeout(drawGlobe(), 5000);    
     drawGraticule();
     enableRotation();
+    resize_globe();
 }
 
 export {init_globe, resize_globe};
