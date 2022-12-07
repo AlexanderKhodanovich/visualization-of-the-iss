@@ -1,5 +1,8 @@
 // Inspiration -> https://bl.ocks.org/atanumallick/8d18989cd538c72ae1ead1c3b18d7b54
 
+import {SIDEBAR_BASE_WIDTH} from "./sidebar.js";
+import {get_transform, draw_points} from "./utils.js";
+
 // SVG Dimensions
 const width = 960;
 const height = 500;
@@ -121,8 +124,22 @@ function show_ISS_stats() {
     
 }
 
+function globe_interactive_scale(mgn_top, mgn_side, mgn_bot) {
+    var globe = d3.select("svg.globe");
+    return Math.min(
+        (window.innerHeight - mgn_top - mgn_bot) / (+globe.attr("height")),
+        (SIDEBAR_BASE_WIDTH*window.innerWidth/1920 - 2*mgn_side) / (+globe.attr("width"))
+    );
+}
+
+function move_globe() {
+    
+}
+
 // Changes Globe size with window size
 function resize_globe(is_interactive) {
+    var globe = d3.select("svg.globe");
+    var scale = 1;
     
     // The globe is big and in the middle of the screen
     if (!is_interactive) {
@@ -133,22 +150,40 @@ function resize_globe(is_interactive) {
 
         // calculate
         var globe_div = d3.select("div.globe_pos");
-        var globe = d3.select("svg.globe");
+        
         const rect_btn = document.querySelector("button.begin").getBoundingClientRect();
         const rect_switch = document.querySelector("div.vis_slider").getBoundingClientRect();
         const h_needed = window.innerHeight - rect_btn.y - rect_btn.height - rect_switch.height - mgn_top - mgn_bottom;
-        const scale = Math.min(h_needed / (+globe.attr("height")), (window.innerWidth - 2*mgn_side) / (+globe.attr("width")));
+        scale = Math.min(
+            h_needed / (+globe.attr("height")),
+            (window.innerWidth - 2*mgn_side) / (+globe.attr("width"))
+        );
         const top = rect_btn.y + rect_btn.height + mgn_top;
 
         // set properties
+        globe.style("transform-origin", "top center");
+        globe.style("top", top + "px");
+        globe.style("left", "50%")
         globe.style("transform", "translate(-50%, 0%)" +
                     " scale(" + scale + ")");
-
-        globe.style("top", top + "px");
     }
     // the globe is small and in the bottom right corner
     else {
-        
+        // define constants
+        const mgn_top = 20;
+        const mgn_side = 20;
+        const mgn_bot = 40;
+
+        var globe = d3.select("svg.globe");
+        const scale = globe_interactive_scale(mgn_top, mgn_side, mgn_bot);
+        const sb_width = SIDEBAR_BASE_WIDTH*window.innerWidth/1920;
+        const left = (window.innerWidth - sb_width + mgn_side);
+        const top = window.innerHeight - mgn_bot - (+globe.attr("height")*scale);
+
+        globe.style("transform-origin", "top left");
+        globe.style("top", top);
+        globe.style("left", left);
+        globe.style("transform", "scale(" + scale + ")");
     }
 }
 
@@ -160,4 +195,4 @@ function init_globe() {
     resize_globe();
 }
 
-export {init_globe, resize_globe};
+export {init_globe, resize_globe, globe_interactive_scale, move_globe};

@@ -168,17 +168,13 @@ text {
     filter: invert(0) sepia(1) saturate(10) hue-rotate(16deg);
 }
 
-div.globe_pos {
-    
-}
-
 svg.globe {
     margin: 0;
     position: absolute;
     left: 50%;
     background-color: transparent;
     transform-origin: top center;
-    
+    pointer-events:none;
 }
 
 div.vis_slider {

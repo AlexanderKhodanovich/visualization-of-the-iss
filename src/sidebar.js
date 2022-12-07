@@ -1,5 +1,7 @@
 import {find_closest_module} from "./draw_modules.js";
 
+const SIDEBAR_BASE_WIDTH = 400;
+
 var is_selecting_on = false;
 
 function toggle_selecting_events() {
@@ -49,9 +51,15 @@ function on_click_sidebar(data, e) {
                 .text(data.modules[id].name);
 
             // show sidebar
-            sidebar.transition()
-                .duration(200)
-                .attr("opacity", 1);
+            if (+sidebar.attr("opacity") == 0) {
+                d3.select("svg.globe").transition()
+                    .duration(200)
+                    .style("opacity", 0);
+                
+                sidebar.transition()
+                    .duration(200)
+                    .attr("opacity", 1);
+            }
 
             // hide live feed
             d3.select("iframe")
@@ -65,7 +73,7 @@ function on_click_sidebar(data, e) {
 
 function rescale_sidebar() {
     var scale = window.innerWidth / 1920;
-    var w = 400*scale;
+    var w = SIDEBAR_BASE_WIDTH*scale;
 
     var sidebar = d3.select("g.sidebar")
     .attr("transform", ("translate(" + (window.innerWidth - w) + "," + 0 + ")"));
@@ -81,7 +89,7 @@ function rescale_sidebar() {
 
 function init_sidebar(data) {
     var scale = window.innerWidth / 1920;
-    var w = 400*scale;
+    var w = SIDEBAR_BASE_WIDTH*scale;
 
     var sidebar = d3.select("svg.iss").append("g")
         .attr("class", "sidebar")
@@ -107,5 +115,6 @@ export {
     init_sidebar,
     rescale_sidebar,
     hide_sidebar,
-    toggle_selecting_events
+    toggle_selecting_events,
+    SIDEBAR_BASE_WIDTH
 };

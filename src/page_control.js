@@ -1,38 +1,61 @@
 import {transform_iss} from "./draw_modules.js";
 import {toggle_highlighting_events, toggle_tooltip_events, hide_tooltip} from "./tooltip.js";
 import {toggle_selecting_events, hide_sidebar} from "./sidebar.js";
+import {resize_globe} from "./globe.js";
 
 var interactive = false;
+var is_globe_displayed = true;
 
 function is_interactive() {
     return interactive;
 }
 
 function on_start_click(data) {
+    // now in interactive mode
+    interactive = true;
+    
     // get objects
     var svg = d3.select("svg.iss");
     var header = d3.select("div.header");
-    var feature_div = d3.select("div.secondary_visualizations");
+    var feed = d3.select("iframe.live_feed");
+    var globe = d3.select("svg.globe");
+    var slider = d3.select("div.vis_slider");
     var footer = d3.select("div.footer");
-
+    is_globe_displayed = (+d3.select("label.switch input").attr("state") == 0);
+    
     // fade out header
     header.transition()
         .duration(1000)
         .style("opacity", 0)
-    // once faded out
         .on("end", function() {
-        // hide Header
-        header.style("display", "none");
-
-        // start interactive mode
-        start_interactive(data);
-    });
+            // hide Header
+            header.style("display", "none");   
+            
+            // start interactive mode
+            start_interactive(data);
+        });
     
-    // fade out feature div
-    feature_div.transition()
+    // if feed is selected
+    if (!is_globe_displayed) {
+        // fade out feed
+        feed.transition()
+            .duration(500)
+            .style("opacity", 0)
+            .on("end", function() { feed.style("display", "none"); });
+    }
+    // if globe is selected
+    else {
+        // fade out globe
+        globe.transition()
+            .duration(500)
+            .style("opacity", 0);
+    }
+    
+    // fade out slider
+    slider.transition()
         .duration(1000)
         .style("opacity", 0)
-        .on("end", function() { feature_div.style("display", "none"); });
+        .on("end", function() { slider.style("display", "none"); });
 
     // fade out footer
     footer.transition()
@@ -42,8 +65,12 @@ function on_start_click(data) {
 }
 
 function on_back_click(data) {
+    // now in normal mode
+    interactive = false;
+    
     // get objects
-    var svg = d3.select("svg.iss");
+    var iss = d3.select("svg.iss");
+    var globe = d3.select("svg.globe")
     var g = d3.select("g.main")
     var bb = d3.select("div.back");
 
@@ -69,56 +96,88 @@ function on_back_click(data) {
         data.animation.finished().then(function() {
             // then move iss off screen
             transform_iss(g, -window.innerWidth*2, 0, 2000).then(function() {
-                // then hide svg
-                svg.style("display", "none");
-
+                // then hide iss
+                iss.style("display", "none");
+                
                 // and finally start normal mode
                 start_normal(data);
             });
         });
     });
+    
+    // fade out globe
+    globe.transition()
+        .duration(200)
+        .style("opacity", 0);
 }
 
 function start_normal(data) {
     // get objects
     var header = d3.select("div.header");
-    var feature_div = d3.select("div.secondary_visualizations")
+    var globe = d3.select("svg.globe");
+    var feed = d3.select("iframe.live_feed");
+    var slider = d3.select("div.vis_slider");
     var footer = d3.select("div.footer");
-
+    
     // fade in header
     header.style("display", "block").transition()
-        .duration(1000)
-        .style("opacity", 1);
+        .duration(500)
+        .style("opacity", 1)
+        .on("end", function() {
+            // move globe
+            console.log("int", is_interactive());
+            resize_globe(is_interactive());
 
-    // fade in globe
-    feature_div.style("display", "block").transition()
-        .duration(1000)
-        .style("opacity", 1);
+            // if globe is selected
+            if (is_globe_displayed) {
+                // fade in globe
+                globe.style("display", "block").transition()
+                    .duration(500)
+                    .style("opacity", 1);
+            }
+            // if feed is selected
+            else {
+                // fade in feed
+                feed.style("opacity", 0).style("display", "block").transition()
+                    .duration(500)
+                    .style("opacity", 1);
+            }
+        });
+    
+    // fade in slider
+    slider.style("display", "block").transition()
+            .duration(1000)
+            .style("opacity", 1);
+    
     
     // fade in footer
     footer.style("display", "block").transition()
         .duration(1000)
-        .style("opacity", 1)
-        .on("end", function() {
-            // now in normal mode
-            interactive = false;
-        });
+        .style("opacity", 1);
 }
 
 function start_interactive(data) {
     // get objects
-    var svg = d3.select("svg.iss");
+    var iss = d3.select("svg.iss");
+    var globe = d3.select("svg.globe");
     var g = d3.select("g.main");
-
-    // show svg
-    svg.style("display", "block");
+    
+    // show iss
+    iss.style("display", "block");
 
     // bring tooltip to front
     d3.select("g.tooltip").raise();
-
+    
+    // move globe
+    resize_globe(is_interactive);
+    
+    // fade in globe
+    globe.transition()
+        .duration(1000)
+        .style("opacity", 1);
+    
     // show ISS
     transform_iss(g, 0, 0, 2000).then(function() {
-
         // animate ISS
         data.animation.animate_all(50);
 
@@ -134,9 +193,6 @@ function start_interactive(data) {
                     toggle_highlighting_events();
                     toggle_tooltip_events();
                     toggle_selecting_events();
-                
-                    // now in interactive mode
-                    interactive = true;
                 });
         });
     });
@@ -181,13 +237,12 @@ function resize_feed() {
     // define constants
     const mgn_top = 60;
     const mgn_side = 20;
-    const mgn_bottom = 20;
+    const mgn_bottom = 120;
     
     // calculate
     var feed = d3.select("iframe.live_feed");
     const rect_btn = document.querySelector("button.begin").getBoundingClientRect();
-    const rect_switch = document.querySelector("div.vis_slider").getBoundingClientRect();
-    const height = window.innerHeight - rect_btn.y - rect_btn.height - rect_switch.height - mgn_top - mgn_bottom;
+    const height = window.innerHeight - rect_btn.y - rect_btn.height - mgn_top - mgn_bottom;
     const width = Math.min((window.innerWidth - mgn_side*2), (height*16/9));
     const top = rect_btn.y + rect_btn.height + mgn_top;
     

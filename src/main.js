@@ -1,10 +1,10 @@
-import {init_sidebar} from "./sidebar.js";
-import {init_tooltip} from "./tooltip.js";
-import {create_svg, resize_svg, draw_modules, transform_iss} from "./draw_modules.js";
-import {Animation} from "./animate_modules.js";
 import {on_start_click, on_back_click, on_toggle_feature_click, resize_feed, is_interactive} from "./page_control.js";
+import {create_svg, resize_svg, draw_modules, transform_iss} from "./draw_modules.js";
 import {init_stars, resize_stars} from "./animate_stars.js";
 import {init_globe, resize_globe} from "./globe.js";
+import {Animation} from "./animate_modules.js";
+import {init_tooltip} from "./tooltip.js";
+import {init_sidebar} from "./sidebar.js";
 
 const path_positions = "../data/positions.json";
 const path_modules = "../data/modules.json";
@@ -13,7 +13,7 @@ function resize_all() {
     resize_stars();
     resize_globe(is_interactive());
     resize_feed();
-    resize_svg(event);
+    resize_svg();
 }
 
 function main(positions, modules) {
