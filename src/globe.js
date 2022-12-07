@@ -109,6 +109,18 @@ function drawMarkers() {
     });
 }
 
+// Shows Real-Time ISS Stats
+function show_ISS_stats() {
+    const markers = markerGroup.selectAll('text')
+        .data(locations);
+    markers
+        .enter()
+        .append('text')
+        .attr('x', d => projection(d)[0] + 10)
+        .attr('y', d => projection(d)[1] - 10)
+    
+}
+
 // Changes Globe size with window size
 function resize_globe(is_interactive) {
     
