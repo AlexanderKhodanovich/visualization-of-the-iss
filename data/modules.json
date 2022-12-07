@@ -1,1028 +1,949 @@
 [
-	{
-		"id": "0",
-		"name": "PMA-3",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "1",
-		"name": "Experiment Logistics Module (ELM)",
-		"owners": [
-			"Japan"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "2",
-		"name": "Z1 ITS",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "3",
-		"name": "ELC-2",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "4",
-		"name": "AMS-02",
-		"owners": [
-			"North America",
-			"Europe",
-			"Asia"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "5",
-		"name": "Mobile Servicing System (MSS)",
-		"owners": [
-			"Canada",
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "Canadarm2 (SSRMS)",
-				"description": ""
-			},
-			{
-				"name": "Mobile Base System (MBS)",
-				"description": ""
-			},
-			{
-				"name": "Dextre (SPDM)",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "6",
-		"name": "ELC-3",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "7",
-		"name": "Poisk (MRM-2)",
-		"owners": [
-			"Russia"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "8",
-		"name": "PMA-2",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "9",
-		"name": "Columbus (European Laboratory)",
-		"owners": [
-			"EU"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
     {
-		"id": "10",
-		"name": "Harmony (Node 2)",
-		"owners": [
-			"United States",
-			"EU"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "11",
-		"name": "JEM Pressurized Module (JEM-PM)",
-		"owners": [
-			"Japan"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "12",
-		"name": "JEM Exposed Facility",
-		"owners": [
-			"Japan"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "13",
-		"name": "Destiny (US Laboratory)",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "14",
-		"name": "ESP-1",
-		"owners": [
-			"United States"
-		],
-		"parts": [
-			{
-				"name": "",
-				"length": {
-					"m": 0,
-					"ft": 0
-				},
-				"diameter": {
-					"m": 0,
-					"ft": 0
-				},
-				"mass": {
-					"kg": 0,
-					"lb:": 0
-				},
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "15",
-		"name": "ESP-2",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "16",
-		"name": "Leonardo (PMM)",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "17",
-		"name": "Quest (Joint Airlock)",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "18",
-		"name": "Unity (Node 1)",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "19",
-		"name": "Tranquility (Node 3)",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
+        "id": "0",
+        "name": "PMA-3",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "1.86 m",
+            "ft": "6 ft 1 in"
+        },
+        "diameter": {
+            "m": "1.9 m",
+            "ft": "6 ft 3 in"
+        },
+        "mass": {
+            "kg": "1,183 kg",
+            "lb": "2,608 lb"
+        },
+        "assemby_flight" : "3A",
+        "launch_vehicle" : "Space Shuttle Discovery (STS-92)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+        "launch_date" : "2000-10-11",
+        "description": "The Pressurized Mating Adapter (PMA) is a class of spacecraft adapters that convert the Common Berthing Mechanism (CBM) used on the US Orbital Segment to APAS-95 docking ports. There are three PMAs located on the International Space Station (ISS); the first two were launched with the Unity connecting module in 1998 aboard STS-88, and the third was launched in 2000 aboard STS-92. All three of the PMAs are now used to permanently connect parts of the ISS, so they are no longer available as docking ports for visiting spacecraft. (wikipedia)"
+    },
     {
-		"id": "20",
-		"name": "BEAM",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "21",
-		"name": "S6 ITS",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "22",
-		"name": "S5 ITS",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "23",
-		"name": "S3/S4 ITS",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "24",
-		"name": "S1 ITS",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "25",
-		"name": "S0 ITS",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "26",
-		"name": "P1 ITS",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "27",
-		"name": "P3/P4 ITS",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "28",
-		"name": "P5 ITS",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "29",
-		"name": "P6 ITS",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
+        "id": "1",
+        "name": "Experiment Logistics Module (ELM)",
+        "owners": [
+            "Japan"
+        ],
+        "length": {
+            "m": "4.21 m",
+            "ft": "13.8 ft"
+        },
+        "diameter": {
+            "m": "4.39 m",
+            "ft": "14.4 ft"
+        },
+        "mass": {
+            "kg": "8,386 kg",
+            "lb": "18,488 lb"
+        },
+        "assemby_flight" : "1J/A",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-123)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "2008-03-11",
+        "description": "The experiment logistics module (ELM) includes two sections: The pressurized section (ELM-PS), also called the JLP (Japanese logistics pressurized), is a pressurized addition to the PM. It is used as a storage facility, providing storage space for experiment payloads, samples and spare items. The unpressurized (external) section (ELM-ES) serves as a storage and transportation module. It was used to transfer external experiments with the Space Shuttle. It is not used after the retirement of the shuttle. (wikipedia)"
+    },
     {
-		"id": "30",
-		"name": "PMA-1",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "31",
-		"name": "Zarya (FGB)",
-		"owners": [
-			"Russia"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "32",
-		"name": "Zvezda (Service Module)",
-		"owners": [
-			"Russia"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "33",
-		"name": "Cupola",
-		"owners": [
-			"EU"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "34",
-		"name": "ESP-3",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "35",
-		"name": "ELC-4",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "36",
-		"name": "ELC-1",
-		"owners": [
-			"United States"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "37",
-		"name": "Rassvet (MRM-1)",
-		"owners": [
-			"Russia"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	},
-	{
-		"id": "38",
-		"name": "Pirs (Docking Compartment)",
-		"owners": [
-			"Russia"
-		],
-		"length": {
-			"m": 0,
-			"ft": 0
-		},
-		"diameter": {
-			"m": 0,
-			"ft": 0
-		},
-		"mass": {
-			"kg": 0,
-			"lb:": 0
-		},
-		"parts": [
-			{
-				"name": "",
-				"description": ""
-			}
-		],
-		"description": ""
-	}
+        "id": "2",
+        "name": "Z1 ITS",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "4.9 m",
+            "ft": "16.07 ft"
+        },
+        "diameter": {
+            "m": "4.2 m",
+            "ft": "13.77 ft"
+        },
+        "mass": {
+            "kg": "8,755 kg",
+            "lb": "19,301 lb"
+        },
+        "assemby_flight" : "3A",
+        "launch_vehicle" : "Space Shuttle Discovery (STS-92)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+        "launch_date" : "2000-09-11",
+        "description": "Integrated truss"
+    },
+    {
+        "id": "3",
+        "name": "ELC-2",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "6,100 kg",
+            "lb": "13,400 lb"
+        },
+        "assemby_flight" : "ULF3",
+        "launch_vehicle" : "Space Shuttle Atlantis (STS-129)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+        "launch_date" : "2009-11-16",
+        "description": "The ELC are four un-pressurized attached payloads, some designed by the Brazilian Space Agency, for the International Space Station (ISS) that provides mechanical mounting surfaces, electrical power, and command and data handling services for science experiments on the ISS. The ELCs have a deck size of about 14 feet by 16 feet and spans the width of the space shuttle's payload bay. They are made of steel, coated with UV paint. Each one is capable of providing scientists with a platform and infrastructure to deploy experiments in the vacuum of space without requiring a separate dedicated Earth-orbiting satellite. Each carrier is capable of carrying 9,800 lbs. to orbit and will also serve as parking fixtures for spare ISS hardware (ORUs) which can be retrieved when needed.[3] Experiments are mounted on ExPRESS payload adapters (ExPA) which are about the same size as the FRAMs that hold ORUs. (wikipedia)"
+    },
+    {
+        "id": "4",
+        "name": "AMS-02",
+        "owners": [
+            "NA",
+            "EU",
+            "Asia"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "7,500 kg",
+            "lb": "16,500 lb"
+        },
+        "assemby_flight" : "ULF6",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-134)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "2011-05-19",
+        "description": "The Alpha Magnetic Spectrometer (AMS-02) is a particle physics experiment module that is mounted on the International Space Station (ISS). The experiment is a recognized CERN experiment (RE1). The module is a detector that measures antimatter in cosmic rays; this information is needed to understand the formation of the Universe and search for evidence of dark matter. (wikipedia)"
+    },
+    {
+        "id": "5",
+        "name": "Mobile Servicing System (MSS)",
+        "owners": [
+            "Canada",
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "1,497 kg",
+            "lb": "3,300 lb"
+        },
+        "assemby_flight" : "6A",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-100)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "2001-04-19",
+        "description": "The Mobile Servicing System (MSS), is a robotic system on board the International Space Station (ISS). Launched to the ISS in 2001, it plays a key role in station assembly and maintenance; it moves equipment and supplies around the station, supports astronauts working in space, and services instruments and other payloads attached to the ISS and is used for external maintenance. Astronauts receive specialized training to enable them to perform these functions with the various systems of the MSS. (wikipedia)"
+    },
+    {
+        "id": "6",
+        "name": "ELC-3",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "6,361 kg",
+            "lb": "14,023 lb"
+        },
+        "assemby_flight" : "ULF6",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-134)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "2011-05-16",
+        "description": "The ELC are four un-pressurized attached payloads, some designed by the Brazilian Space Agency, for the International Space Station (ISS) that provides mechanical mounting surfaces, electrical power, and command and data handling services for science experiments on the ISS. The ELCs have a deck size of about 14 feet by 16 feet and spans the width of the space shuttle's payload bay. They are made of steel, coated with UV paint. Each one is capable of providing scientists with a platform and infrastructure to deploy experiments in the vacuum of space without requiring a separate dedicated Earth-orbiting satellite. Each carrier is capable of carrying 9,800 lbs. to orbit and will also serve as parking fixtures for spare ISS hardware (ORUs) which can be retrieved when needed. Experiments are mounted on ExPRESS payload adapters (ExPA) which are about the same size as the FRAMs that hold ORUs. (wikipedia)"
+    },
+    {
+        "id": "7",
+        "name": "Poisk (MRM-2)",
+        "owners": [
+            "Russia"
+        ],
+        "length": {
+            "m": "4.05 m",
+            "ft": "13.28 ft"
+        },
+        "diameter": {
+            "m": "2.55 m",
+            "ft": "8 ft 4 in"
+        },
+        "mass": {
+            "kg": "3,670 kg",
+            "lb": "8,090 lb"
+        },
+        "assemby_flight" : "5R",
+        "launch_vehicle" : "Soyuz-U (Progress M-MIM2)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Soyuz-U",
+        "launch_date" : "2009-11-10",
+        "description": "Poisk (Russian: Поиск), also known as the Mini-Research Module 2 (MRM 2), Малый исследовательский модуль 2, or МИМ 2, is a docking module of the International Space Station. Added in 2009, Poisk was the first major Russian addition to the International Space Station since 2001. Poisk is overall the same design as the docking module Pirs. Whereas Pirs had been attached to the nadir (bottom) port of Zvezda, Poisk is attached to the zenith (top); Pirs was closer to the Earth with the ISS in its usual orientation, and Poisk is on the other side. Poisk is Russian for explore or search. Poisk combines various docking, EVA, and science capabilities. It has two egress hatches for EVAs in addition to the two spacecraft docking ports. Although Poisk is designated as Mini-Research Module 2, it arrived before Mini-Research Module 1 (Rassvet); Poisk looks more like the Pirs docking port, which is not designated as a mini-research module. (wikipedia)"
+    },
+    {
+        "id": "8",
+        "name": "PMA-2",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "1.86 m",
+            "ft": "6 ft 1 in"
+        },
+        "diameter": {
+            "m": "1.9 m",
+            "ft": "6 ft 3 in"
+        },
+        "mass": {
+            "kg": "1,183 kg",
+            "lb": "2,608 lb"
+        },
+        "assemby_flight" : "2A",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-88)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "1998-12-04",
+        "description": "The Pressurized Mating Adapter (PMA) is a class of spacecraft adapters that convert the Common Berthing Mechanism (CBM) used on the US Orbital Segment to APAS-95 docking ports. There are three PMAs located on the International Space Station (ISS); the first two were launched with the Unity connecting module in 1998 aboard STS-88, and the third was launched in 2000 aboard STS-92. All three of the PMAs are now used to permanently connect parts of the ISS, so they are no longer available as docking ports for visiting spacecraft. (wikipedia)"
+    },
+    {
+        "id": "9",
+        "name": "Columbus (European Laboratory)",
+        "owners": [
+            "EU"
+        ],
+        "length": {
+            "m": "7 m",
+            "ft": "23 ft"
+        },
+        "diameter": {
+            "m": "4.5 m",
+            "ft": "15 ft"
+        },
+        "mass": {
+            "kg": "12,800 kg",
+            "lb": "28,219 lb"
+        },
+        "parts": [
+            {
+                "name": "",
+                "description": ""
+            }
+        ],
+        "assemby_flight" : "1E",
+        "launch_vehicle" : "Space Shuttle Atlantis (STS-122)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+        "launch_date" : "2008-02-07",
+        "description": "Columbus is a science laboratory that is part of the International Space Station (ISS) and is the largest single contribution to the ISS made by the European Space Agency (ESA). Like the Harmony and Tranquility modules, the Columbus laboratory was constructed in Turin, Italy by Thales Alenia Space. The equipment and software of the lab was designed by EADS in Bremen, Germany. It was also integrated in Bremen before being flown to the Kennedy Space Center (KSC) in Florida in an Airbus Beluga. It was launched aboard Space Shuttle Atlantis on February 7, 2008, on flight STS-122. It is designed for ten years of operation. The module is controlled by the Columbus Control Centre, located at the German Space Operations Center, part of the German Aerospace Center in Oberpfaffenhofen near Munich, Germany. The European Space Agency has spent €1.4 billion on building Columbus, including the experiments and the ground control infrastructure necessary to operate them. (wikipedia)"
+    },
+    {
+        "id": "10",
+        "name": "Harmony (Node 2)",
+        "owners": [
+            "USA",
+            "EU"
+        ],
+        "length": {
+            "m": "7.2 m",
+            "ft": "24 ft"
+        },
+        "diameter": {
+            "m": "4.4 m",
+            "ft": "14 ft"
+        },
+        "mass": {
+            "kg": "14,300 kg",
+            "lb": "31,500 lb"
+        },
+        "assemby_flight" : "10A",
+        "launch_vehicle" : "Space Shuttle Discovery (STS-120)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+        "launch_date" : "2007-10-23",
+        "description": "Harmony, also known as Node 2, is the utility hub of the International Space Station. It connects the laboratory modules of the USA, Europe and Japan, as well as providing electrical power and electronic data. Sleeping cabins for four of the crew are housed here. Harmony was successfully launched into space aboard Space Shuttle flight STS-120 on 23 October 2007.[4][5] After temporarily being attached to the port side of the Unity module,[6][7] it was moved to its permanent location on the forward end of the Destiny module on 14 November 2007.[8] Harmony added 70 m3 (2,500 cu ft) to the station's living volume, an increase of almost 20%, from 420 m3 (15,000 cu ft) to 490 m3 (17,000 cu ft). Its successful installation meant that from NASA's perspective, the station was considered to be U.S. Core Complete. (wikipedia)"
+    },
+    {
+        "id": "11",
+        "name": "JEM Pressurized Module (JEM-PM)",
+        "owners": [
+            "Japan"
+        ],
+        "length": {
+            "m": "11.19 m",
+            "ft": "36.7 ft"
+        },
+        "diameter": {
+            "m": "4.39 m",
+            "ft": "14.4 ft"
+        },
+        "mass": {
+            "kg": "15,900 kg",
+            "lb": "35,100 lb"
+        },
+        "assemby_flight" : "1J",
+        "launch_vehicle" : "Space Shuttle Discovery (STS-124)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+        "launch_date" : "2008-05-31",
+        "description": "The Japanese Experiment Module (JEM), nicknamed Kibō (きぼう, Kibō, Hope), is a Japanese science module for the International Space Station (ISS) developed by JAXA. It is the largest single ISS module, and is attached to the Harmony module. The first two pieces of the module were launched on Space Shuttle missions STS-123 and STS-124. The third and final components were launched on STS-127. (wikipedia)"
+    },
+    {
+        "id": "12",
+        "name": "JEM Exposed Facility",
+        "owners": [
+            "Japan"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "2J/A",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-127)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "2009-07-15",
+        "description": "The Exposed Facility (EF), also known as Terrace, is located outside the port cone of the PM (which is equipped with an airlock). The EF has twelve Exposed Facility Unit (EFU) ports which attach to Payload Interface Unit (PIU) connectors on EF-equipment exchange units (EF-EEUs). All experiment payloads are fully exposed to the space environment. For proper functioning of these experiments, the payload requires an orbital replacement unit (ORU), consisting of the electrical power system (EPS), communications and tracking (CT), and the thermal control system (TCS). Of the twelve ORUs, eight are replaceable by the JEMRMS while the other four are EVA-replaceable. (wikipedia)"
+    },
+    {
+        "id": "13",
+        "name": "Destiny (US Laboratory)",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "9.2 m",
+            "ft": "30 ft"
+        },
+        "diameter": {
+            "m": "4.3 m",
+            "ft": "14 ft"
+        },
+        "mass": {
+            "kg": "14,515 kg",
+            "lb": "32,000 lb"
+        },
+        "assemby_flight" : "5A",
+        "launch_vehicle" : "Space Shuttle Atlantis (STS-98)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+        "launch_date" : "2001-02-07",
+        "description": "The Destiny module, also known as the U.S. Lab, is the primary operating facility for U.S. research payloads aboard the International Space Station (ISS). It was berthed to the Unity module and activated over a period of five days in February, 2001. Destiny is NASA's first permanent operating orbital research station since Skylab was vacated in February 1974. The Boeing Company began construction of the 14.5-tonne (32,000 lb) research laboratory in 1995 at the Michoud Assembly Facility and then the Marshall Space Flight Center in Huntsville, Alabama. Destiny was shipped to the Kennedy Space Center in Florida in 1998, and was turned over to NASA for pre-launch preparations in August 2000. It launched on February 7, 2001 aboard the Space Shuttle Atlantis on STS-98. Astronauts work inside the pressurized facility to conduct research in numerous scientific fields. Scientists throughout the world would use the results to enhance their studies in medicine, engineering, biotechnology, physics, materials science, and Earth science. (wikipedia)"
+    },
+    {
+        "id": "14",
+        "name": "ESP-1",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "2.4 m",
+            "ft": "7.87 ft"
+        },
+        "diameter": {
+            "m": "0.46 m",
+            "ft": "1.5 ft"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "5A.1",
+        "launch_vehicle" : "Space Shuttle Discovery (STS-102)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+        "launch_date" : "2001-03-08",
+        "description": "External stowage platforms (ESPs) are key components of the International Space Station (ISS). Each platform is made from steel and serves as an external pallet that can hold spare parts, also known as orbital replacement units (ORUs), for the space station. As a platform it is not pressurized, but does require electricity to power the heaters of some of the stored equipment. ORUs are attached to the ESP via Flight Releasable Attachment Mechanisms (FRAMs), matching witness plates that mate the ORU to the platform. (wikipedia)"
+    },
+    {
+        "id": "15",
+        "name": "ESP-2",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "2.6 m",
+            "ft": "8.5 ft"
+        },
+        "diameter": {
+            "m": "4.3 m",
+            "ft": "14 ft"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "5A.1",
+        "launch_vehicle" : "Space Shuttle Discovery (STS-102)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+        "launch_date" : "2001-03-08",
+        "description": "External stowage platforms (ESPs) are key components of the International Space Station (ISS). Each platform is made from steel and serves as an external pallet that can hold spare parts, also known as orbital replacement units (ORUs), for the space station. As a platform it is not pressurized, but does require electricity to power the heaters of some of the stored equipment. ORUs are attached to the ESP via Flight Releasable Attachment Mechanisms (FRAMs), matching witness plates that mate the ORU to the platform. (wikipedia)"
+    },
+    {
+        "id": "16",
+        "name": "Leonardo (PMM)",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "6.6 m",
+            "ft": "22 ft"
+        },
+        "diameter": {
+            "m": "4.57 m",
+            "ft": "15 ft"
+        },
+        "mass": {
+            "kg": "4,082 kg",
+            "lb": "8,999 lb"
+        },
+        "assemby_flight" : "ULF5",
+        "launch_vehicle" : "Space Shuttle Discovery (STS-133)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+        "launch_date" : "2011-02-24",
+        "description": "The Leonardo Permanent Multipurpose Module (PMM) is a module of the International Space Station. It was flown into space aboard the Space Shuttle Discovery on STS-133 on 24 February 2011 and installed on 1 March. Leonardo is primarily used for storage of spares, supplies and waste on the ISS, which was until then stored in many different places within the space station. It is also the personal hygiene area for the astronauts who live in the US Orbital Segment. The Leonardo PMM was a Multi-Purpose Logistics Module (MPLM) before 2011, then was modified into its current configuration. It was formerly one of two MPLM used for bringing cargo to and from the ISS with the Space Shuttle. The module was named for Italian polymath Leonardo da Vinci. Like the other Multi-Purpose Logistics Modules, it was constructed by the Italian Space Agency, who chose to name it after Leonardo da Vinci. Construction began in April 1996, and the module was delivered to NASA at the Kennedy Space Center in August 1998 by an Airbus Beluga aircraft. (wikipedia)"
+    },
+    {
+        "id": "17",
+        "name": "Quest (Joint Airlock)",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "5.5 m",
+            "ft": "18 ft"
+        },
+        "diameter": {
+            "m": "4.0 m",
+            "ft": "13.1 ft"
+        },
+        "mass": {
+            "kg": "9,923 kg",
+            "lb": "21,876 lb"
+        },
+        "assemby_flight" : "7A",
+        "launch_vehicle" : "Space Shuttle Atlantis (STS-104)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+        "launch_date" : "2001-07-12",
+        "description": "The Quest Joint Airlock, previously known as the Joint Airlock Module, is the primary airlock for the International Space Station. Quest was designed to host spacewalks with both Extravehicular Mobility Unit (EMU) spacesuits and Orlan space suits. The airlock was launched on STS-104 on July 14, 2001. It was attached to the starboard CBM of the Unity during STS-104. The four external HP tanks were installed in pairs on two occasions. Before Quest was attached, Russian spacewalks using Orlan suits could only be done from the Zvezda service module, and American spacewalks using EMUs were only possible when a Space Shuttle was docked, allowing the astronauts to use the Shuttle's airlock, located in its payload bay.[citation needed] The arrival of Pirs docking compartment on September 16, 2001 provided another airlock from which Orlan spacewalks can be conducted. (wikipedia)"
+    },
+    {
+        "id": "18",
+        "name": "Unity (Node 1)",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "5.5 m",
+            "ft": "18 ft"
+        },
+        "diameter": {
+            "m": "4.3 m",
+            "ft": "14 ft"
+        },
+        "mass": {
+            "kg": "11,895 kg",
+            "lb": "26,224 lb"
+        },
+        "assemby_flight" : "2A",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-88)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "1998-12-04",
+        "description": "The Unity connecting module, also known as Node 1, is the first U.S.-built component of the International Space Station (ISS). It connects the Russian and USA segments of the station, and is where crew eat meals together. The module is cylindrical in shape, with six berthing locations (forward, aft, port, starboard, zenith, and nadir) facilitating connections to other modules. Unity measures 4.57 m (15.0 ft) in diameter, is 5.47 m (17.9 ft) long, made of steel, and was built for NASA by Boeing in a manufacturing facility at the Marshall Space Flight Center in Huntsville, Alabama. Unity is the first of the three connecting modules; the other two are Harmony and Tranquility. (wikipedia)"
+    },
+    {
+        "id": "19",
+        "name": "Tranquility (Node 3)",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "6.706 m",
+            "ft": "22 ft"
+        },
+        "diameter": {
+            "m": "4.48 m",
+            "ft": "14.7 ft"
+        },
+        "mass": {
+            "kg": "19,000 kg",
+            "lb": "42,000 lb"
+        },
+        "assemby_flight" : "20A",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-130)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "2010-02-08",
+        "description": "Tranquility, also known as Node 3, is a module of the International Space Station (ISS). It contains environmental control systems, life support systems, a toilet, exercise equipment, and an observation cupola. The European Space Agency (ESA) and the Italian Space Agency (ASI) had Tranquility manufactured by Thales Alenia Space. A ceremony on 20 November 2009 transferred ownership of the module to NASA. On 8 February 2010, NASA launched the module on the Space Shuttle's STS-130 mission. (wikipedia)"
+    },
+    {
+        "id": "20",
+        "name": "BEAM",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "4.01 m",
+            "ft": "13.2 ft"
+        },
+        "diameter": {
+            "m": "3.23 m",
+            "ft": "10.6 ft"
+        },
+        "mass": {
+            "kg": "1,413 kg",
+            "lb": "3,115 lb"
+        },
+        "assemby_flight" : "CRS SpX-8",
+        "launch_vehicle" : "Falcon 9 (SpaceX CRS-8)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/SpaceX_CRS-8",
+        "launch_date" : "2016-04-08",
+        "description": "The Bigelow Expandable Activity Module (BEAM) is an experimental expandable space station module developed by Bigelow Aerospace, under contract to NASA, for testing as a temporary module on the International Space Station (ISS) from 2016 to at most 2028, when the contract can not be extended any further. It arrived at the ISS on 10 April 2016,[6] was berthed to the station on 16 April 2016, and was expanded and pressurized on 28 May 2016. Although originally planned to be a two year test, it has exceeded expectations and is used as additional cargo storage. The module is under ownership of NASA after Bigelow Aerospace suspended operations in 2021. (wikipedia)"
+    },
+    {
+        "id": "21",
+        "name": "S6 ITS",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "15A",
+        "launch_vehicle" : "Space Shuttle Discovery (STS-119)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+        "launch_date" : "2009-03-15",
+        "description": "The Integrated Truss Structure (ITS) of the International Space Station (ISS) consists of a linear arranged sequence of connected trusses on which various unpressurized components are mounted such as logistics carriers, radiators, solar arrays, and other equipment. It supplies the ISS with a bus architecture. It is approximately 110 meters long and is made from aluminum and stainless steel. (wikipedia)"
+    },
+    {
+        "id": "22",
+        "name": "S5 ITS",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "13A.1",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-118)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "2007-08-08",
+        "description": "The Integrated Truss Structure (ITS) of the International Space Station (ISS) consists of a linear arranged sequence of connected trusses on which various unpressurized components are mounted such as logistics carriers, radiators, solar arrays, and other equipment. It supplies the ISS with a bus architecture. It is approximately 110 meters long and is made from aluminum and stainless steel. (wikipedia)"
+    },
+    {
+        "id": "23",
+        "name": "S3/S4 ITS",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "13A",
+        "launch_vehicle" : "Space Shuttle Atlantis (STS-117)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+        "launch_date" : "2007-06-08",
+        "description": "The Integrated Truss Structure (ITS) of the International Space Station (ISS) consists of a linear arranged sequence of connected trusses on which various unpressurized components are mounted such as logistics carriers, radiators, solar arrays, and other equipment. It supplies the ISS with a bus architecture. It is approximately 110 meters long and is made from aluminum and stainless steel. (wikipedia)"
+    },
+    {
+        "id": "24",
+        "name": "S1 ITS",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "9A",
+        "launch_vehicle" : "Space Shuttle Atlantis (STS-112)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+        "launch_date" : "2002-10-07",
+        "description": "The Integrated Truss Structure (ITS) of the International Space Station (ISS) consists of a linear arranged sequence of connected trusses on which various unpressurized components are mounted such as logistics carriers, radiators, solar arrays, and other equipment. It supplies the ISS with a bus architecture. It is approximately 110 meters long and is made from aluminum and stainless steel. (wikipedia)"
+    },
+    {
+        "id": "25",
+        "name": "S0 ITS",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "8A",
+        "launch_vehicle" : "Space Shuttle Atlantis (STS-110)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+        "launch_date" : "2002-04-08",
+        "description": "The Integrated Truss Structure (ITS) of the International Space Station (ISS) consists of a linear arranged sequence of connected trusses on which various unpressurized components are mounted such as logistics carriers, radiators, solar arrays, and other equipment. It supplies the ISS with a bus architecture. It is approximately 110 meters long and is made from aluminum and stainless steel. (wikipedia)"
+    },
+    {
+        "id": "26",
+        "name": "P1 ITS",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "11A",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-113)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "2002-11-23",
+        "description": "The Integrated Truss Structure (ITS) of the International Space Station (ISS) consists of a linear arranged sequence of connected trusses on which various unpressurized components are mounted such as logistics carriers, radiators, solar arrays, and other equipment. It supplies the ISS with a bus architecture. It is approximately 110 meters long and is made from aluminum and stainless steel. (wikipedia)"
+    },
+    {
+        "id": "27",
+        "name": "P3/P4 ITS",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "12A",
+        "launch_vehicle" : "Space Shuttle Atlantis (STS-115)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+        "launch_date" : "2006-09-09",
+        "description": "The Integrated Truss Structure (ITS) of the International Space Station (ISS) consists of a linear arranged sequence of connected trusses on which various unpressurized components are mounted such as logistics carriers, radiators, solar arrays, and other equipment. It supplies the ISS with a bus architecture. It is approximately 110 meters long and is made from aluminum and stainless steel. (wikipedia)"
+    },
+    {
+        "id": "28",
+        "name": "P5 ITS",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "12A.1",
+        "launch_vehicle" : "Space Shuttle Discovery (STS-116)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+        "launch_date" : "2006-12-09",
+        "description": "The Integrated Truss Structure (ITS) of the International Space Station (ISS) consists of a linear arranged sequence of connected trusses on which various unpressurized components are mounted such as logistics carriers, radiators, solar arrays, and other equipment. It supplies the ISS with a bus architecture. It is approximately 110 meters long and is made from aluminum and stainless steel. (wikipedia)"
+    },
+    {
+        "id": "29",
+        "name": "P6 ITS",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "4A",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-97)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "2000-11-30",
+        "description": "The Integrated Truss Structure (ITS) of the International Space Station (ISS) consists of a linear arranged sequence of connected trusses on which various unpressurized components are mounted such as logistics carriers, radiators, solar arrays, and other equipment. It supplies the ISS with a bus architecture. It is approximately 110 meters long and is made from aluminum and stainless steel. (wikipedia)"
+    },
+    {
+        "id": "30",
+        "name": "PMA-1",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "1.86 m",
+            "ft": "6ft 1in"
+        },
+        "diameter": {
+            "m": "1.9 m",
+            "ft": "6 ft 3 in"
+        },
+        "mass": {
+            "kg": "1,589 kg",
+            "lb": "3,503 lb"
+        },
+        "assemby_flight" : "2A",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-88)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "1998-12-04",
+        "description": "This was one of the first components of the International Space Station. PMA-1 joins the Russian side of the station with the US side. On STS-88, the crew used the shuttle's robotic arm to attach the Zarya control module to PMA-1, which was already connected to the aft berthing port of Unity. These first two station components are permanently connected by PMA-1. (wikipedia)"
+    },
+    {
+        "id": "31",
+        "name": "Zarya (FGB)",
+        "owners": [
+            "Russia"
+        ],
+        "length": {
+            "m": "12.56 m",
+            "ft": "41.2 ft"
+        },
+        "diameter": {
+            "m": "4.1 m",
+            "ft": "13 ft"
+        },
+        "mass": {
+            "kg": "24,968 kg",
+            "lb": "55,045 lb"
+        },
+        "assemby_flight" : "1A/R",
+        "launch_vehicle" : "Proton-K",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Proton-K",
+        "launch_date" : "1998-11-20",
+        "description": "Zarya (Russian: Заря, lit. 'Dawn'[b]), also known as the Functional Cargo Block or FGB (from the Russian: Функционально-грузовой блок, lit. 'Funktsionalno-gruzovoy blok' or ФГБ), is the first module of the International Space Station to have been launched.[2] The FGB provided electrical power, storage, propulsion, and guidance to the ISS during the initial stage of assembly. With the launch and assembly in orbit of other modules with more specialized functionality, as of August 2021 it is primarily used for storage, both inside the pressurized section and in the externally mounted fuel tanks. The Zarya is a descendant of the TKS spacecraft designed for the Russian Salyut program. The name Zarya (Dawn) was given to the FGB because it signified the dawn of a new era of international cooperation in space. Although it was built by a Russian company, it is owned by the USA. (wikipedia)"
+    },
+    {
+        "id": "32",
+        "name": "Zvezda (Service Module)",
+        "owners": [
+            "Russia"
+        ],
+        "length": {
+            "m": "13.1 m",
+            "ft": "43 ft"
+        },
+        "diameter": {
+            "m": "4.2 m",
+            "ft": "14 ft"
+        },
+        "mass": {
+            "kg": "24,604 kg",
+            "lb": "54,243 lb"
+        },
+        "assemby_flight" : "1R",
+        "launch_vehicle" : "Proton-K",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Proton-K",
+        "launch_date" : "2000-07-12",
+        "description": "Zvezda (Russian: Звезда, meaning star), Salyut DOS-8, also known as the Zvezda Service Module, is a module of the International Space Station (ISS). It was the third module launched to the station, and provided all of the station's life support systems, some of which are supplemented in the US Orbital Segment (USOS), as well as living quarters for two crew members. It is the structural and functional center of the Russian Orbital Segment (ROS), which is the Russian part of the ISS. Crew assemble here to deal with emergencies on the station. The module was manufactured in the USSR by RKK Energia, with major sub-contracting work by GKNPTs Khrunichev. Zvezda was launched on a Proton launch vehicle on 12 July 2000, and docked with the Zarya module on 26 July 2000. (wikipedia)"
+    },
+    {
+        "id": "33",
+        "name": "Cupola",
+        "owners": [
+            "EU"
+        ],
+        "length": {
+            "m": "1.5 m",
+            "ft": "4.9 ft"
+        },
+        "diameter": {
+            "m": "2.95 m",
+            "ft": "9.68 ft"
+        },
+        "mass": {
+            "kg": "1,805 kg",
+            "lb": "3,979 lb"
+        },
+        "assemby_flight" : "20A",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-130)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "2010-02-08",
+        "description": "The Cupola is an ESA-built observatory module of the International Space Station (ISS). Its name derives from the Italian word cupola, which means dome. Its seven windows are used to conduct experiments, dockings and observations of Earth. It was launched aboard Space Shuttle Endeavour's mission STS-130 on 8 February 2010, and attached to the Tranquility (Node 3) module. With the Cupola attached, ISS assembly reached 85 percent completion. The Cupola's central window has a diameter of 80 cm (31 in). (wikipedia)"
+    },
+    {
+        "id": "34",
+        "name": "ESP-3",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "2.6 m",
+            "ft": "8.5 ft"
+        },
+        "diameter": {
+            "m": "4.3 m",
+            "ft": "14 ft"
+        },
+        "mass": {
+            "kg": "N/A",
+            "lb": "N/A"
+        },
+        "assemby_flight" : "13A.1",
+        "launch_vehicle" : "Space Shuttle Endeavour (STS-118)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+        "launch_date" : "2007-08-08",
+        "description": "External stowage platforms (ESPs) are key components of the International Space Station (ISS). Each platform is made from steel and serves as an external pallet that can hold spare parts, also known as orbital replacement units (ORUs), for the space station. As a platform it is not pressurized, but does require electricity to power the heaters of some of the stored equipment. ORUs are attached to the ESP via Flight Releasable Attachment Mechanisms (FRAMs), matching witness plates that mate the ORU to the platform. (wikipedia)"
+    },
+    {
+        "id": "35",
+        "name": "ELC-4",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "3,735 kg",
+            "lb": "8,235 lb"
+        },
+        "assemby_flight" : "ULF5",
+        "launch_vehicle" : "Space Shuttle Discovery (STS-133)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+        "launch_date" : "2011-02-24",
+        "description": "ELC-4 is located on the S3 truss at the PAS-4 (nadir, earth facing) site, alongside ESP-3 at PAS-3. ELC-4 weighs 8,235 lbs. (wikipedia)"
+    },
+    {
+        "id": "36",
+        "name": "ELC-1",
+        "owners": [
+            "USA"
+        ],
+        "length": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "diameter": {
+            "m": "N/A",
+            "ft": "N/A"
+        },
+        "mass": {
+            "kg": "6,280 kg",
+            "lb": "13,840 lb"
+        },
+        "assemby_flight" : "ULF3",
+        "launch_vehicle" : "Space Shuttle Atlantis (STS-129)",
+        "launch_vehicle_link":
+        "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+        "launch_date" : "2009-11-16",
+        "description": "ELC-1 is located on the P3 truss at the UCCAS-2 (nadir, earth facing) site. ELC-1 weighs approx. 13,840 lbs. A FRAM is a Flight Releasable Attachment Mechanism. (wikipedia)"
+    },
+    {
+        "id": "37",
+        "name": "Rassvet (MRM-1)",
+        "owners": [
+            "Russia"
+        ],
+        "length": {
+            "m": "6 m",
+            "ft": "19.69 ft"
+        },
+        "diameter": {
+            "m": "2.35 m",
+            "ft": "7.7 ft"
+        },
+        "mass": {
+            "kg": "8,015 kg",
+            "lb": "17,670 lb"
+        },
+        "assemby_flight" : "ULF4",
+        "launch_vehicle" : "Space Shuttle Atlantis (STS-132)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+        "launch_date" : "2010-05-14",
+        "description": "Rassvet (Russian: Рассвет; lit. first light), also known as the Mini-Research Module 1 (MRM-1; Russian: Малый исследовательский модуль, МИМ 1) and formerly known as the Docking Cargo Module (DCM), is a component of the International Space Station (ISS). The module's design is similar to the Mir Docking Module launched on STS-74 in 1995. Rassvet is primarily used for cargo storage and as a docking port for visiting spacecraft. It was flown to the ISS aboard Space Shuttle Atlantis on the STS-132 mission on 14 May 2010,[2] and was connected to the ISS on 18 May 2010.[3] The hatch connecting Rassvet with the ISS was first opened on 20 May 2010.[4] On 28 June 2010, the Soyuz TMA-19 spacecraft performed the first docking with the module. (wikipedia)"
+    },
+    {
+        "id": "38",
+        "name": "Pirs (Docking Compartment)",
+        "owners": [
+            "Russia"
+        ],
+        "length": {
+            "m": "4.9 m",
+            "ft": "16 ft"
+        },
+        "diameter": {
+            "m": "2.55 m",
+            "ft": "8.4 ft"
+        },
+        "mass": {
+            "kg": "3,838 kg",
+            "lb": "8,461 lb"
+        },
+        "assemby_flight" : "4R",
+        "launch_vehicle" : "Soyuz-U (Progress M-SO1)",
+        "launch_vehicle_link": "https://en.wikipedia.org/wiki/Soyuz-U",
+        "launch_date" : "2001-09-14",
+        "description": "Pirs (Russian: Пирс, meaning pier) – also called Stykovochny Otsek 1 (SO-1; Russian: Стыковочный отсек, docking module) and DC-1 (Docking Compartment 1) – was a Russian module on the International Space Station (ISS). Pirs was launched on 14 September 2001, and was located on the Zvezda module of the station. It provided the ISS with one docking port for Soyuz and Progress spacecraft, and allowed egress and ingress for spacewalks by cosmonauts using Russian Orlan space suits. Pirs was docked to Zvezda for almost 20 years, until 26 July 2021, where it was decommissioned and undocked by Progress MS-16 to make way for the new Nauka module. (wikipedia)"
+    }
 ]

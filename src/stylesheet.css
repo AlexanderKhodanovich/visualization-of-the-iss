@@ -143,6 +143,54 @@ iframe.live_feed {
     text-anchor: middle;
 }
 
+.sidebar text.module_owners {
+    fill: white;
+    font-family: sans-serif;
+    font-size: .82vw;
+}
+
+.sidebar text.module_length {
+    fill: white;
+    font-family: sans-serif;
+    font-size: .82vw;
+}
+
+.sidebar text.module_diameter {
+    fill: white;
+    font-family: sans-serif;
+    font-size: .82vw;
+}
+
+.sidebar text.module_mass {
+    fill: white;
+    font-family: sans-serif;
+    font-size: .82vw;
+}
+
+.sidebar text.module_creation {
+    fill: white;
+    font-family: sans-serif;
+    font-size: .9vw;
+}
+
+.sidebar text.assembly_flight {
+    fill: white;
+    font-family: sans-serif;
+    font-size: .9vw;
+}
+
+.sidebar text.launch_vehicle {
+    fill: white;
+    font-family: sans-serif;
+    font-size: .9vw;
+}
+
+.sidebar text.launch_date {
+    fill: white;
+    font-family: sans-serif;
+    font-size: .9vw;
+}
+
 .tooltip rect {
     fill: #1B2631;
     stroke: white;
