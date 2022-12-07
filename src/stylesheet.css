@@ -35,7 +35,7 @@ svg.iss {
     transform: translate(-50%, 0);
     text-align: center;
     font-family: Sans-Serif; 
-    font-size: 18px;
+    font-size: 1vmax;
     color: white;
 }
 

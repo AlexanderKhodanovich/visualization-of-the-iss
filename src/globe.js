@@ -1,11 +1,23 @@
+// Inspiration -> https://bl.ocks.org/atanumallick/8d18989cd538c72ae1ead1c3b18d7b54
+
+// SVG Dimensions
 const width = 960;
 const height = 500;
+
+// Globe Properties
 const config = {
   speed: 0.05,
   verticalTilt: -30,
   horizontalTilt: 0
 }
+
+// Array for ISS Coordinates 
 let locations = [];
+
+// Polling rate for API
+var tickRate = 5000; /* polls every 5 seconds*/
+
+// Creates SVG and Globe Projection
 const svg = d3.select('svg')
     .attr('width', width).attr('height', height);
 const markerGroup = svg.append('g');
@@ -14,14 +26,11 @@ const initialScale = projection.scale();
 const path = d3.geoPath().projection(projection);
 const center = [width/2, height/2];   
 
+// Renders Continents, Countries, and ISS Coordinates
 function drawGlobe() {  
-    d3.json('http://api.open-notify.org/iss-now.json').then(function(data) {
-        locations = [[data.iss_position.longitude, data.iss_position.latitude], [data.iss_position.longitude, data.iss_position.latitude]]
-    });
+    getCoordinates();
     d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/world-110m.json")
         .then( function(worldData) {
-            //worldData = values[0]
-            //locationData = values[1]
             svg.selectAll(".segment")
                 .data(topojson.feature(worldData, worldData.objects.countries).features)
                 .enter().append("path")
@@ -33,10 +42,10 @@ function drawGlobe() {
                 .style("stroke-width", "1px")
                 .style("fill", (d, i) => '#228B22')
                 .style("opacity", "1");
-                drawMarkers();
     });
 }
 
+// Renders Gridlines and Ocean
 function drawGraticule() {
     const graticule = d3.geoGraticule()
         .step([10, 10]);
@@ -55,6 +64,7 @@ function drawGraticule() {
         .style("stroke", "#ccc");
 }
 
+// Changes Rotation of Globe every tick
 function enableRotation() {
     d3.timer(function (elapsed) {
         projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
@@ -63,7 +73,22 @@ function enableRotation() {
     });
 }        
 
-function drawMarkers() {
+// Updates Coordinates from API per tickRate
+function pollCoordinates() {
+    d3.interval(getCoordinates, tickRate);
+}
+
+// Recieves coordinates of ISS from API and renders a point on the globe with the location
+function getCoordinates() {
+    d3.json('https://api.wheretheiss.at/v1/satellites/25544').then(function(data) {
+        console.log(`Current ISS Coordinates: ${data.longitude} ${data.latitude}`)
+        locations = [[data.longitude, data.latitude], [data.longitude, data.latitude]]
+        drawMarkers();
+    });
+}
+
+// Renders baby ISS
+function drawMarkers() { 
     const markers = markerGroup.selectAll('circle')
         .data(locations);
     markers
@@ -84,6 +109,7 @@ function drawMarkers() {
     });
 }
 
+// Changes Globe size with window size
 function resize_globe(is_interactive) {
     
     // The globe is big and in the middle of the screen
@@ -118,6 +144,7 @@ function init_globe() {
     setTimeout(drawGlobe(), 5000);    
     drawGraticule();
     enableRotation();
+    pollCoordinates();
     resize_globe();
 }
 
