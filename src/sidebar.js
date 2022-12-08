@@ -93,6 +93,7 @@ function on_click_sidebar(data, e) {
             
             // show sidebar
             if (+sidebar.attr("opacity") == 0) {
+                resize_sidebar();
                 d3.select("svg.globe").transition()
                     .duration(200)
                     .style("opacity", 0);
@@ -112,7 +113,7 @@ function on_click_sidebar(data, e) {
     }
 }
 
-function rescale_sidebar() {
+function resize_sidebar() {
     var scale = window.innerWidth / 1920;
     var w = SIDEBAR_BASE_WIDTH*scale;
 
@@ -126,6 +127,98 @@ function rescale_sidebar() {
     sidebar.select("text.title")
         .attr("x", w/2)
         .attr("y", 60*scale);
+    
+    // ISS Module Picture Border
+    sidebar.select("rect.imageBorder")
+        .attr("x", 50*scale)
+        .attr("y", 80*scale)
+        .attr("width", 300*scale)
+        .attr("height", 300*scale);
+    
+    // ISS Module Picture
+    sidebar.select("image.module_image")
+        .attr("x", 50*scale)
+        .attr("y", 80*scale)
+        .attr("width", 300*scale)
+        .attr("height", 300*scale);
+    
+    // ISS Module Owners
+    sidebar.select("image.module_owners")
+        .attr("x", 50*scale)
+        .attr("y", 400*scale)
+        .attr("width", 20*scale)
+        .attr("height", 20*scale);
+    sidebar.select("text.module_owners")
+        .attr("x", 78*scale)
+        .attr("y", 418*scale);
+    
+    // ISS Module Length
+    sidebar.select("image.module_length")
+        .attr("x", 50*scale)
+        .attr("y", 430*scale)
+        .attr("width", 20*scale)
+        .attr("height", 20*scale);
+    sidebar.select("text.module_length")
+        .attr("x", 78*scale)
+        .attr("y", 445*scale);
+    
+    // ISS Module Weight
+    sidebar.select("image.module_mass")
+        .attr("x", 200*scale)
+        .attr("y", 400*scale)
+        .attr("width", 20*scale)
+        .attr("height", 20*scale);
+    sidebar.select("text.module_mass")
+        .attr("x", 227*scale)
+        .attr("y", 418*scale);
+
+    // ISS Module Diameter
+    sidebar.select("image.module_diameter")
+        .attr("x", 200*scale)
+        .attr("y", 430*scale)
+        .attr("width", 20*scale)
+        .attr("height", 20*scale);
+    sidebar.select("text.module_diameter")
+        .attr("x", 227*scale)
+        .attr("y", 445*scale);
+    
+    // ISS Module Assembly Flight
+    sidebar.select("text.af_title")
+        .attr("x", 50*scale)
+        .attr("y", 500*scale);
+    sidebar.select("text.assembly_flight")
+        .attr("x", 50*scale)
+        .attr("y", 520*scale);
+    
+    // ISS Module Launch Vehicle
+    sidebar.select("text.lv_title")
+        .attr("x", 50*scale)
+        .attr("y", 540*scale);
+    sidebar.select("text.launch_vehicle")
+        .attr("x", 50*scale)
+        .attr("y", 560*scale);
+    
+    // ISS Module Launch Date
+    sidebar.select("text.ld_title")
+        .attr("x", 50*scale)
+        .attr("y", 580*scale);
+    sidebar.select("text.launch_date")
+        .attr("x", 50*scale)
+        .attr("y", 600*scale);
+    
+    // ISS Module Description
+    sidebar.select("foreignObject")
+        .attr("width", 300*scale)
+        .attr("height", window.innerHeight)
+        .attr("x", 50*scale)
+        .attr("y", 620*scale);
+    
+    // On Hover
+    sidebar.selectAll("image.back_button")
+        .attr("x", 350*scale)
+        .attr("y", 8*scale)
+        .attr("width", 30*scale)
+        .attr("height", 30*scale);
 }
 
 function init_sidebar(data) {
@@ -150,20 +243,20 @@ function init_sidebar(data) {
     var hover = sidebar.append("svg:image")
         .attr("class", "back_button")
         .attr("xlink:href", path_icons + "back_hover.png")
-        .attr("x", "18.5%")
-        .attr("y", "0.7%")
-        .attr("width", "30")
-        .attr("height", "30")
+        .attr("x", 350*scale)
+        .attr("y", 8*scale)
+        .attr("width", 30*scale)
+        .attr("height", 30*scale)
         .attr("style", "cursor:pointer")
-        .style("opacity", "1")
+        .style("opacity", "1");
     
     var back = sidebar.append("svg:image")
         .attr("class", "back_button")
         .attr("xlink:href", path_icons + "back.png")
-        .attr("x", "18.5%")
-        .attr("y", "0.7%")
-        .attr("width", "30")
-        .attr("height", "30")
+        .attr("x", 350*scale)
+        .attr("y", 8*scale)
+        .attr("width", 30*scale)
+        .attr("height", 30*scale)
         .attr("style", "cursor:pointer")
         .style("opacity", "1")
         .on("mouseover", function() {
@@ -198,8 +291,8 @@ function init_sidebar(data) {
         .attr("rx", "25px")
         .attr("x", 50*scale)
         .attr("y", 80*scale)
-        .attr("width", 300)
-        .attr("height", 300)
+        .attr("width", 300*scale)
+        .attr("height", 300*scale);
     
     // ISS Module Picture
     sidebar.append("svg:image")
@@ -208,99 +301,102 @@ function init_sidebar(data) {
         .attr("x", 50*scale)
         .attr("y", 80*scale)
         .attr("width", 300)
-        .attr("height", 300)
-    
+        .attr("height", 300);
     
     // ISS Module Owners
     sidebar.append("svg:image")
+        .attr("class", "module_owners")
         .attr("xlink:href", path_icons + "owners.png")
         .attr("x", 50*scale)
         .attr("y", 400*scale)
         .attr("width", 20)
-        .attr("height", 20)
+        .attr("height", 20);
     sidebar.append("text")
         .attr("class", "module_owners")
         .attr("x", 78*scale)
         .attr("y", 418*scale)
-        .text("Owners: USA")
+        .text("Owners: USA");
     
     // ISS Module Length
     sidebar.append("svg:image")
+        .attr("class", "module_length")
         .attr("xlink:href", path_icons + "length.png")
         .attr("x", 50*scale)
         .attr("y", 430*scale)
         .attr("width", 20)
-        .attr("height", 20)
+        .attr("height", 20);
     sidebar.append("text")
         .attr("class", "module_length")
         .attr("x", 78*scale)
         .attr("y", 445*scale)
-        .text("100m (100ft)")
+        .text("100m (100ft)");
     
     // ISS Module Weight
     sidebar.append("svg:image")
+        .attr("class", "module_mass")
         .attr("xlink:href", path_icons + "weight.png")
         .attr("x", 200*scale)
         .attr("y", 400*scale)
         .attr("width", 20)
-        .attr("height", 20)
+        .attr("height", 20);
     sidebar.append("text")
         .attr("class", "module_mass")
         .attr("x", 227*scale)
         .attr("y", 418*scale)
-        .text("100kg (100lbs)")
+        .text("100kg (100lbs)");
 
     // ISS Module Diameter
     sidebar.append("svg:image")
+        .attr("class", "module_diameter")
         .attr("xlink:href", path_icons + "diameter.png")
         .attr("x", 200*scale)
         .attr("y", 430*scale)
         .attr("width", 20)
-        .attr("height", 20)
+        .attr("height", 20);
     sidebar.append("text")
         .attr("class", "module_diameter")
         .attr("x", 227*scale)
         .attr("y", 445*scale)
-        .text("100m (100ft)")
+        .text("100m (100ft)");
     
     // ISS Module Assembly Flight
     sidebar.append("text")
-        .attr("class", "module_creation")
+        .attr("class", "af_title")
         .attr("x", 50*scale)
         .attr("y", 500*scale)
         .style("font-weight", "bold")
-        .text("Assembly Flight")
+        .text("Assembly Flight");
     sidebar.append("text")
         .attr("class", "assembly_flight")
         .attr("x", 50*scale)
         .attr("y", 520*scale)
-        .text("Canada")
+        .text("Canada");
     
     // ISS Module Launch Vehicle
     sidebar.append("text")
-        .attr("class", "module_creation")
+        .attr("class", "lv_title")
         .attr("x", 50*scale)
         .attr("y", 540*scale)
         .style("font-weight", "bold")
-        .text("Launch Vehicle")
+        .text("Launch Vehicle");
     sidebar.append("text")
         .attr("class", "launch_vehicle")
         .attr("x", 50*scale)
         .attr("y", 560*scale)
-        .text("Warp Star")
+        .text("Warp Star");
     
     // ISS Module Launch Date
     sidebar.append("text")
-        .attr("class", "module_creation")
+        .attr("class", "ld_title")
         .attr("x", 50*scale)
         .attr("y", 580*scale)
         .style("font-weight", "bold")
-        .text("Launch Date")
+        .text("Launch Date");
     sidebar.append("text")
         .attr("class", "launch_date")
         .attr("x", 50*scale)
         .attr("y", 600*scale)
-        .text("1998-02-02")
+        .text("1998-02-02");
     
     // ISS Module Description
     sidebar.append("svg:foreignObject")
@@ -318,7 +414,7 @@ function init_sidebar(data) {
 
 export {
     init_sidebar,
-    rescale_sidebar,
+    resize_sidebar,
     hide_sidebar,
     toggle_selecting_events,
     SIDEBAR_BASE_WIDTH

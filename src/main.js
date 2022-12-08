@@ -1,5 +1,5 @@
 import {on_start_click, on_back_click, on_toggle_feature_click, resize_feed, is_interactive} from "./page_control.js";
-import {create_svg, resize_svg, draw_modules, transform_iss} from "./draw_modules.js";
+import {create_svg, resize_svg, draw_modules, transform_iss, update_module_centers} from "./draw_modules.js";
 import {init_stars, resize_stars} from "./animate_stars.js";
 import {init_globe, resize_globe} from "./globe.js";
 import {Animation} from "./animate_modules.js";
@@ -16,6 +16,7 @@ function resize_all() {
     resize_globe(is_interactive());
     resize_feed();
     resize_svg();
+    update_module_centers();
 }
 
 function main(positions, modules) {
