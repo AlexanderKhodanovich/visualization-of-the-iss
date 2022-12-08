@@ -14,6 +14,7 @@ svg.iss {
         1px -1px 0 #000,
         -1px -1px 0 #000;
 }
+
 .header {
     max-width: 100vw;
     max-height: 100vh;
@@ -81,6 +82,21 @@ div.back {
     opacity: 0;
 }
 
+div.prompt {
+    position: absolute;
+    top: -20%;
+    left: 140%;
+    width: 600px;
+    display: none;
+    opacity: 0;
+}
+
+.prompt h1 {
+    font-family: Helvetica, Sans-Serif; 
+    font-size: min(36px, 6vw);
+    
+    color: white;
+}
 body { 
     min-height: 100vh; 
     display: flex;
@@ -226,7 +242,14 @@ text {
 }
 
 .module_selected image {
-    filter: invert(0) sepia(1) saturate(10) hue-rotate(16deg);
+    filter: invert(0) sepia(1) saturate(40) hue-rotate(16deg);
+}
+
+.chartTitle {
+    position: relative;
+    right: 50%;
+    font-family: Sans-Serif; 
+    color: white;
 }
 
 svg.globe {
@@ -248,7 +271,7 @@ div.vis_slider {
     position: relative;
     right: 100px;
     font-family: Sans-Serif; 
-    font-size: 18px;
+    font-size: 17px;
     color: white;
 }
 

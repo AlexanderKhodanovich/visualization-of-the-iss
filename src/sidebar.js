@@ -25,7 +25,16 @@ function hide_sidebar() {
     d3.select("g.sidebar").transition()
         .duration(200)
         .attr("opacity", 0)
-        .on("end", function() { done(); });
+        .on("end", function() {
+            done(); 
+            // show prompt again
+            d3.select("div.prompt")
+                .transition()
+                .duration(500)
+                .style("opacity", 1);
+        });
+    
+
 
     // bring back live feed
     d3.select("iframe")
@@ -40,6 +49,12 @@ function hide_sidebar() {
 function on_click_sidebar(data, e) {
     if (is_selecting_on) {
         var id = find_closest_module(data, {x: e.clientX, y: e.clientY});
+        
+        // hide prompt
+        d3.select("div.prompt")
+            .transition()
+            .duration(500)
+            .style("opacity", 0);
 
         if (data.images[id].attr("class") == "module_highlighted"){
             // deselect previous module

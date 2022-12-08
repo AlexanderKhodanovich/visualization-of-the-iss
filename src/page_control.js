@@ -74,12 +74,19 @@ function on_back_click(data) {
     var globe = d3.select("svg.globe")
     var g = d3.select("g.main")
     var bb = d3.select("div.back");
+    var prompt = d3.select("div.prompt");
 
     // hide back button
     bb.transition()
         .duration(200)
         .style("opacity", 0)
         .on("end", function() { bb.style("display", "none"); });
+    
+    // hide prompt (if not already hidden)
+    prompt.transition()
+        .duration(200)
+        .style("opacity", 0)
+        .on("end", function() { prompt.style("display", "none"); });
 
     // lock interactions
     toggle_highlighting_events();
@@ -184,6 +191,13 @@ function start_interactive(data) {
         data.animation.animate_all(50);
 
         data.animation.finished().then(function() {
+            // show prompt 
+            d3.select("div.prompt")
+                .style("display", "block")
+                .transition()
+                .duration(500)
+                .style("opacity", 1);
+            
             // show back button
             d3.select(".back")
                 .style("display", "block")
@@ -204,6 +218,7 @@ function on_toggle_feature_click() {
     // get objects
     var globe = d3.select("svg.globe");
     var feed = d3.select("iframe.live_feed");
+    var chartTitle = d3.select(".chartTitle")
     
     // get current state
     var state = +d3.select("label.switch input").attr("state");
@@ -217,6 +232,9 @@ function on_toggle_feature_click() {
                 feed.style("display", "block").transition()
                     .duration(200)
                     .style("opacity", 1);
+                chartTitle.transition()
+                    .duration(200)
+                    .text("ISS Live Video Feed")
             });
     } else {
         feed.transition()
@@ -227,6 +245,9 @@ function on_toggle_feature_click() {
                 globe.style("display", "block").transition()
                     .duration(200)
                     .style("opacity", 1);
+                chartTitle.transition()
+                    .duration(200)
+                    .text("ISS Live Location")
             });
     }
     
@@ -239,7 +260,7 @@ function resize_feed() {
     // define constants
     const mgn_top = 400;
     const mgn_side = 20;
-    const mgn_bottom = 120;
+    const mgn_bottom = 125;
     
     // calculate
     var feed = d3.select("iframe.live_feed");

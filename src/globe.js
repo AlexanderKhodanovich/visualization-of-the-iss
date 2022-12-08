@@ -146,7 +146,7 @@ function resize_globe(is_interactive) {
         // define constants
         const mgn_top = 400;
         const mgn_side = 20;
-        const mgn_bottom = 120;
+        const mgn_bottom = 125;
 
         // calculate
         var globe_div = d3.select("div.globe_pos");
