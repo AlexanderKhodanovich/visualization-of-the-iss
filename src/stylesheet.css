@@ -2,7 +2,7 @@ svg.iss {
     display: none;
 }
 
-p.iss_data {
+div.iss_data {
     margin: 0;
     position: absolute;
     bottom: 140px;
@@ -27,6 +27,10 @@ p.iss_data {
         -1px -1px 0 #000;
 }
 
+image.velocity {
+    position: absolute;
+    top: 50%
+}
 .header {
     max-width: 100vw;
     max-height: 100vh;

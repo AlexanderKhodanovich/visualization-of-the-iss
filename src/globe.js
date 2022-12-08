@@ -3,6 +3,8 @@
 import {SIDEBAR_BASE_WIDTH} from "./sidebar.js";
 import {get_transform, draw_points} from "./utils.js";
 
+const path_icons = "../data/icons/";
+
 // SVG Dimensions
 const width = 960;
 const height = 500;
@@ -86,8 +88,8 @@ function getCoordinates() {
     d3.json('https://api.wheretheiss.at/v1/satellites/25544').then(function(data) {
         const alt = Math.round(data.altitude);
         const v = Math.round(data.velocity);
-        d3.select("p.iss_data")
-            .text("Altitude: " + alt + " km | Velocity: " + v + " km/h");
+        d3.select("div.iss_data")
+            .html('<img src="../data/icons/altitude.png" alt="Altitude" width="20" height="20"> &nbsp;' + alt + ' km &nbsp;|&nbsp; <img src="../data/icons/velocity.png" alt="Velocity" width="21" height="21"> &nbsp;' + v + " km/h");
         
         console.log(`Current ISS Coordinates: ${data.longitude} ${data.latitude}`)
         locations = [[data.longitude, data.latitude], [data.longitude, data.latitude]]
