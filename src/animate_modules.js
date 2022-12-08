@@ -1,4 +1,5 @@
 import {move_in_3d} from "./utils.js";
+import {update_module_centers} from "./draw_modules.js";
 
 class Animation {   
     constructor(positions, images, duration) {
@@ -236,6 +237,7 @@ class Animation {
         animate_promise.then(function(context) {
             context.ends = [];
             console.log("finished animation");
+            update_module_centers();
         });
     }
     

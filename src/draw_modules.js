@@ -18,7 +18,13 @@ var iss_offset = {
     y: 75
 };
 
+var module_centers = null;
+
 //---------------------------------------------------- Functions ----------------------------------------------------//
+function update_module_centers() {
+    module_centers = null;
+}
+
 function resize_svg() {
     // resize svg
     d3.select("svg.iss")
@@ -130,16 +136,18 @@ function draw_modules(positions) {
 }
 
 function get_module_centers(data) {
-    var centers = [];
-    
-    data.images.forEach((img, i) => {
-        var raw_center = get_center(img.select("image"));
-        centers.push({
-            x: (raw_center.x + data.positions[i].x_offset)*iss_scale + margin.left + iss_offset.x,
-            y: (raw_center.y + data.positions[i].y_offset)*iss_scale + margin.top + iss_offset.y
+    if (!module_centers) {
+        module_centers = [];
+
+        data.images.forEach((img, i) => {
+            var raw_center = get_center(img.select("image"));
+            module_centers.push({
+                x: (raw_center.x + data.positions[i].x_offset)*iss_scale + margin.left + iss_offset.x,
+                y: (raw_center.y + data.positions[i].y_offset)*iss_scale + margin.top + iss_offset.y
+            });
         });
-    });
-    return centers;
+    }
+    return module_centers;
 }
 
 //-------------------------------------------------------------------------------------------------------------------//
@@ -148,5 +156,6 @@ export {
     create_svg,
     transform_iss,
     draw_modules,
-    resize_svg
+    resize_svg,
+    update_module_centers
 }
