@@ -23,19 +23,22 @@ svg.iss {
 .header h1 {
     text-align: center;
     font-family: Helvetica, Sans-Serif; 
-    font-size: 48px;
+    font-size: min(48px, 6vw);
+    
     color: white;
 }
 
 .header p {
     margin: 0;
-    position: absolute;
-    top: 100px;
+    position: relative;
+    top: 0px;
     left: 50%;
+    height: 1000px;
+    width: min(90%, 1200px);
     transform: translate(-50%, 0);
     text-align: center;
     font-family: Sans-Serif; 
-    font-size: 1vmax;
+    font-size: min(2vmax, 18px);
     color: white;
 }
 
