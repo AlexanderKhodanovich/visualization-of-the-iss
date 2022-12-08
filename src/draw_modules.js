@@ -73,6 +73,7 @@ function create_image(parent, image_name, w, h) {
         .attr("y", center.y - h/2)
         .attr("width", w)
         .attr("height", h)
+        .attr("style", "cursor:pointer")
         .attr("xlink:href", (path_images + image_name));
     
     return new_g;
