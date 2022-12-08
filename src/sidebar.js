@@ -3,6 +3,7 @@ import {find_closest_module} from "./draw_modules.js";
 // Constants
 const path_images = "../data/sidebar_images/";
 const path_icons = "../data/icons/";
+const SIDEBAR_BASE_WIDTH = 400;
 const IMAGE_WIDTH = 550;
 const IMAGE_HEIGHT = 550;
 
@@ -91,9 +92,15 @@ function on_click_sidebar(data, e) {
                 .text(`${data.modules[id].description}`)
             
             // show sidebar
-            sidebar.transition()
-                .duration(200)
-                .attr("opacity", 1);
+            if (+sidebar.attr("opacity") == 0) {
+                d3.select("svg.globe").transition()
+                    .duration(200)
+                    .style("opacity", 0);
+                
+                sidebar.transition()
+                    .duration(200)
+                    .attr("opacity", 1);
+            }
 
             // hide live feed
             d3.select("iframe")
@@ -107,7 +114,7 @@ function on_click_sidebar(data, e) {
 
 function rescale_sidebar() {
     var scale = window.innerWidth / 1920;
-    var w = 400*scale;
+    var w = SIDEBAR_BASE_WIDTH*scale;
 
     var sidebar = d3.select("g.sidebar")
     .attr("transform", ("translate(" + (window.innerWidth - w) + "," + 0 + ")"));
@@ -123,7 +130,7 @@ function rescale_sidebar() {
 
 function init_sidebar(data) {
     var scale = window.innerWidth / 1920;
-    var w = 400*scale;
+    var w = SIDEBAR_BASE_WIDTH*scale;
 
     var sidebar = d3.select("svg.iss").append("g")
         .attr("class", "sidebar")
@@ -169,7 +176,12 @@ function init_sidebar(data) {
                 .duration(200)
                 .style("opacity", "1")
         })
-        .on("click", hide_sidebar)
+        .on("click", function() {
+            hide_sidebar();
+            d3.select("svg.globe").transition()
+                .duration(200)
+                .style("opacity", 1);
+        });
         
     // ISS Module Name
     sidebar.append("text")
@@ -295,7 +307,7 @@ function init_sidebar(data) {
         .attr("width", 300*scale)
         .attr("height", window.innerHeight)
         .attr("x", 50*scale)
-        .attr("y", 640*scale)
+        .attr("y", 620*scale)
         .style("font-family", "sans-serif")
         .style("font-size", ".69vw")
         .style("color", "white")
@@ -308,5 +320,6 @@ export {
     init_sidebar,
     rescale_sidebar,
     hide_sidebar,
-    toggle_selecting_events
+    toggle_selecting_events,
+    SIDEBAR_BASE_WIDTH
 };
