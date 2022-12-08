@@ -172,7 +172,7 @@ function start_interactive(data) {
     resize_globe(is_interactive);
     
     // fade in globe
-    globe.transition()
+    globe.style("display", "block").transition()
         .duration(1000)
         .style("opacity", 1);
     

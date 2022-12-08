@@ -8,6 +8,8 @@ import {init_sidebar} from "./sidebar.js";
 
 const path_positions = "../data/positions.json";
 const path_modules = "../data/modules.json";
+const path_images = "../data/sidebar_images/";
+const path_icons = "../data/icons/";
 
 function resize_all() {
     resize_stars();
@@ -19,7 +21,7 @@ function resize_all() {
 function main(positions, modules) {
     // create main svg
     create_svg();
-    
+
     // draw iss
     var images = draw_modules(positions);
     
