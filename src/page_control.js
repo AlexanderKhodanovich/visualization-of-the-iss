@@ -260,7 +260,7 @@ function resize_feed() {
     // define constants
     const mgn_top = 400;
     const mgn_side = 20;
-    const mgn_bottom = 125;
+    const mgn_bottom = 180;
     
     // calculate
     var feed = d3.select("iframe.live_feed");

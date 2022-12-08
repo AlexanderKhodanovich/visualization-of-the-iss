@@ -2,6 +2,18 @@ svg.iss {
     display: none;
 }
 
+p.iss_data {
+    margin: 0;
+    position: absolute;
+    bottom: 140px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    font-family: Sans-Serif; 
+    font-size: min(1.8vmax, 18px);
+    color: white;
+}
+
 .axes path {
     stroke: red;
     stroke-width: 4;
@@ -269,7 +281,7 @@ div.vis_slider {
 
 .vis_slider p {
     position: relative;
-    right: 100px;
+    right: 90px;
     font-family: Sans-Serif; 
     font-size: 17px;
     color: white;
@@ -278,7 +290,7 @@ div.vis_slider {
 .switch {
   position: relative;
   top: -45px;
-  left: 50px;
+  left: 40px;
   display: inline-block;
   width: 60px;
   height: 34px;

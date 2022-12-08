@@ -14,8 +14,8 @@ const config = {
   horizontalTilt: 0
 }
 
-// Array for ISS Coordinates 
-let locations = [];
+// Data arrays 
+var locations = [];
 
 // Polling rate for API
 var tickRate = 5000; /* polls every 5 seconds*/
@@ -84,6 +84,11 @@ function pollCoordinates() {
 // Recieves coordinates of ISS from API and renders a point on the globe with the location
 function getCoordinates() {
     d3.json('https://api.wheretheiss.at/v1/satellites/25544').then(function(data) {
+        const alt = Math.round(data.altitude);
+        const v = Math.round(data.velocity);
+        d3.select("p.iss_data")
+            .text("Altitude: " + alt + " km | Velocity: " + v + " km/h");
+        
         console.log(`Current ISS Coordinates: ${data.longitude} ${data.latitude}`)
         locations = [[data.longitude, data.latitude], [data.longitude, data.latitude]]
         drawMarkers();
@@ -132,10 +137,6 @@ function globe_interactive_scale(mgn_top, mgn_side, mgn_bot) {
     );
 }
 
-function move_globe() {
-    
-}
-
 // Changes Globe size with window size
 function resize_globe(is_interactive) {
     var globe = d3.select("svg.globe");
@@ -146,7 +147,7 @@ function resize_globe(is_interactive) {
         // define constants
         const mgn_top = 400;
         const mgn_side = 20;
-        const mgn_bottom = 125;
+        const mgn_bottom = 180;
 
         // calculate
         var globe_div = d3.select("div.globe_pos");
@@ -192,4 +193,4 @@ function init_globe() {
     resize_globe();
 }
 
-export {init_globe, resize_globe, globe_interactive_scale, move_globe};
+export {init_globe, resize_globe, globe_interactive_scale};
