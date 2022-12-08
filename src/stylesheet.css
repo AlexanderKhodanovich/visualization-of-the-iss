@@ -15,8 +15,8 @@ svg.iss {
         -1px -1px 0 #000;
 }
 .header {
-    min-width: 100vw;
-    min-height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
     opacity: 1;
 }
 
@@ -38,7 +38,7 @@ svg.iss {
     transform: translate(-50%, 0);
     text-align: center;
     font-family: Sans-Serif; 
-    font-size: min(2vmax, 18px);
+    font-size: min(1.8vmax, 18px);
     color: white;
 }
 
