@@ -19,6 +19,7 @@ function on_start_click(data) {
     var header = d3.select("div.header");
     var feed = d3.select("iframe.live_feed");
     var globe = d3.select("svg.globe");
+    var stats = d3.select("p.iss_data");
     var slider = d3.select("div.vis_slider");
     var footer = d3.select("div.footer");
     is_globe_displayed = (+d3.select("label.switch input").attr("state") == 0);
@@ -51,6 +52,12 @@ function on_start_click(data) {
             .duration(500)
             .style("opacity", 0);
     }
+    
+    // fade out iss stats
+    stats.transition()
+        .duration(1000)
+        .style("opacity", 0)
+        .on("end", function() { slider.style("display", "none"); });
     
     // fade out slider
     slider.transition()
@@ -124,6 +131,7 @@ function start_normal(data) {
     var header = d3.select("div.header");
     var globe = d3.select("svg.globe");
     var feed = d3.select("iframe.live_feed");
+    var stats = d3.select("p.iss_data");
     var slider = d3.select("div.vis_slider");
     var footer = d3.select("div.footer");
     
@@ -153,10 +161,15 @@ function start_normal(data) {
             }
         });
     
+    // fade in stats
+    stats.style("display", "block").transition()
+        .duration(1000)
+        .style("opacity", 1);
+    
     // fade in slider
     slider.style("display", "block").transition()
-            .duration(1000)
-            .style("opacity", 1);
+        .duration(1000)
+        .style("opacity", 1);
     
     
     // fade in footer
@@ -260,7 +273,7 @@ function resize_feed() {
     // define constants
     const mgn_top = 400;
     const mgn_side = 20;
-    const mgn_bottom = 125;
+    const mgn_bottom = 180;
     
     // calculate
     var feed = d3.select("iframe.live_feed");
