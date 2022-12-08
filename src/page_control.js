@@ -29,7 +29,8 @@ function on_start_click(data) {
         .style("opacity", 0)
         .on("end", function() {
             // hide Header
-            header.style("display", "none");   
+            header.style("display", "none"); 
+            header.style("position", "absolute");
             
             // start interactive mode
             start_interactive(data);
@@ -120,6 +121,7 @@ function start_normal(data) {
     var footer = d3.select("div.footer");
     
     // fade in header
+    header.style("position", "relative");
     header.style("display", "block").transition()
         .duration(500)
         .style("opacity", 1)
