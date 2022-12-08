@@ -11,7 +11,7 @@ This is a collaborative project aimed to visualize the International Space Stati
 
 [Data Spreadsheet](https://docs.google.com/spreadsheets/d/16bKfwpIoAt00URy6PiZ9A8lKxjWlkeIaKaTW1trYElk/edit?usp=sharing)
 
-[Real-Time ISS Location API](http://open-notify.org/Open-Notify-API/ISS-Location-Now/)
+[Real-Time ISS Location API](https://wheretheiss.at/w/developer)
 
 [Main Loop for the Space Background](https://github.com/IceCreamYou/MainLoop.js)
 
