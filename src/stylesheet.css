@@ -167,7 +167,17 @@ iframe.live_feed {
     font-size: .82vw;
 }
 
-.sidebar text.module_creation {
+.sidebar text.af_title {
+    fill: white;
+    font-family: sans-serif;
+    font-size: .9vw;
+}
+.sidebar text.lv_title {
+    fill: white;
+    font-family: sans-serif;
+    font-size: .9vw;
+}
+.sidebar text.ld_title {
     fill: white;
     font-family: sans-serif;
     font-size: .9vw;

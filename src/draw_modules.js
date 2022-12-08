@@ -1,5 +1,5 @@
 import {move_in_2d, move_in_3d, get_center, distance, get_transform} from "./utils.js";
-import {rescale_sidebar} from "./sidebar.js";
+import {resize_sidebar} from "./sidebar.js";
 
 //--------------------------------------------------- Definitions ---------------------------------------------------//
 // Constants
@@ -47,7 +47,7 @@ function resize_svg() {
            iss_scale + ")");
     
     // resize sidebar
-    rescale_sidebar();
+    resize_sidebar();
 }
 
 function find_closest_module(data, point) {
