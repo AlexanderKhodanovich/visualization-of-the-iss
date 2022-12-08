@@ -235,16 +235,15 @@ function on_toggle_feature_click() {
 
 function resize_feed() {
     // define constants
-    const mgn_top = 60;
+    const mgn_top = 400;
     const mgn_side = 20;
     const mgn_bottom = 120;
     
     // calculate
     var feed = d3.select("iframe.live_feed");
-    const rect_btn = document.querySelector("button.begin").getBoundingClientRect();
-    const height = window.innerHeight - rect_btn.y - rect_btn.height - mgn_top - mgn_bottom;
+    const height = window.innerHeight - mgn_top - mgn_bottom;
     const width = Math.min((window.innerWidth - mgn_side*2), (height*16/9));
-    const top = rect_btn.y + rect_btn.height + mgn_top;
+    const top = mgn_top;
     
     // set parameters
     feed.style("width", width + "px");

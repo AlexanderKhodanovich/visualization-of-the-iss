@@ -144,21 +144,18 @@ function resize_globe(is_interactive) {
     // The globe is big and in the middle of the screen
     if (!is_interactive) {
         // define constants
-        const mgn_top = 60;
+        const mgn_top = 400;
         const mgn_side = 20;
-        const mgn_bottom = 20;
+        const mgn_bottom = 120;
 
         // calculate
         var globe_div = d3.select("div.globe_pos");
-        
-        const rect_btn = document.querySelector("button.begin").getBoundingClientRect();
-        const rect_switch = document.querySelector("div.vis_slider").getBoundingClientRect();
-        const h_needed = window.innerHeight - rect_btn.y - rect_btn.height - rect_switch.height - mgn_top - mgn_bottom;
+        const h_needed = window.innerHeight - mgn_top - mgn_bottom;
         scale = Math.min(
             h_needed / (+globe.attr("height")),
             (window.innerWidth - 2*mgn_side) / (+globe.attr("width"))
         );
-        const top = rect_btn.y + rect_btn.height + mgn_top;
+        const top = mgn_top;
 
         // set properties
         globe.style("transform-origin", "top center");
