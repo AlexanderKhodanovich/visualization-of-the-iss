@@ -19,7 +19,7 @@ function on_start_click(data) {
     var header = d3.select("div.header");
     var feed = d3.select("iframe.live_feed");
     var globe = d3.select("svg.globe");
-    var stats = d3.select("p.iss_data");
+    var stats = d3.select("div.iss_data");
     var slider = d3.select("div.vis_slider");
     var footer = d3.select("div.footer");
     is_globe_displayed = (+d3.select("label.switch input").attr("state") == 0);
@@ -131,7 +131,7 @@ function start_normal(data) {
     var header = d3.select("div.header");
     var globe = d3.select("svg.globe");
     var feed = d3.select("iframe.live_feed");
-    var stats = d3.select("p.iss_data");
+    var stats = d3.select("div.iss_data");
     var slider = d3.select("div.vis_slider");
     var footer = d3.select("div.footer");
     
